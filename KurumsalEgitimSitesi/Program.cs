@@ -11,19 +11,23 @@ builder.WebHost.UseUrls($"http://0.0.0.0:{port}");
 builder.Services.AddControllersWithViews();
 
 // PostgreSQL + Entity Framework Core
-// Railway DATABASE_URL environment variable desteği
-var databaseUrl = Environment.GetEnvironmentVariable("DATABASE_URL");
+// Railway DATABASE_URL veya DATABASE_PRIVATE_URL environment variable desteği
+var databaseUrl = Environment.GetEnvironmentVariable("DATABASE_URL") 
+    ?? Environment.GetEnvironmentVariable("DATABASE_PRIVATE_URL");
 string connectionString;
 
 if (!string.IsNullOrEmpty(databaseUrl))
 {
+    Console.WriteLine($"[DB] DATABASE_URL bulundu, parse ediliyor...");
     // Railway PostgreSQL URL formatı: postgresql://user:password@host:port/database
     var uri = new Uri(databaseUrl);
     var userInfo = uri.UserInfo.Split(':');
     connectionString = $"Host={uri.Host};Port={uri.Port};Database={uri.AbsolutePath.TrimStart('/')};Username={userInfo[0]};Password={userInfo[1]};SSL Mode=Require;Trust Server Certificate=true";
+    Console.WriteLine($"[DB] Host={uri.Host}, Port={uri.Port}, Database={uri.AbsolutePath.TrimStart('/')}");
 }
 else
 {
+    Console.WriteLine("[DB] DATABASE_URL bulunamadı, appsettings.json kullanılıyor.");
     connectionString = builder.Configuration.GetConnectionString("DefaultConnection")!;
 }
 
