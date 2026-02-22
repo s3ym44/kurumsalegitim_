@@ -1,0 +1,52 @@
+@model KurumsalEgitimSitesi.Models.Category
+@{
+    ViewData["Title"] = "Kategori Düzenle";
+    Layout = "~/Views/Admin/_AdminLayout.cshtml";
+}
+
+<div class="admin-page-header">
+    <h1><i class="fas fa-edit"></i> Kategori Düzenle</h1>
+</div>
+
+<div class="admin-card">
+    <div class="admin-card-body">
+        <form asp-action="CategoryEdit" asp-route-id="@Model.Id" method="post" class="admin-form">
+            @Html.AntiForgeryToken()
+            <input type="hidden" asp-for="Id" />
+            <input type="hidden" asp-for="CreatedAt" />
+            <div class="row g-3">
+                <div class="col-md-6">
+                    <label asp-for="Name" class="form-label"></label>
+                    <input asp-for="Name" class="form-control" />
+                    <span asp-validation-for="Name" class="text-danger small"></span>
+                </div>
+                <div class="col-md-6">
+                    <label asp-for="IconClass" class="form-label"></label>
+                    <input asp-for="IconClass" class="form-control" />
+                </div>
+                <div class="col-md-12">
+                    <label asp-for="Description" class="form-label"></label>
+                    <textarea asp-for="Description" class="form-control" rows="3"></textarea>
+                </div>
+                <div class="col-md-4">
+                    <label asp-for="ColorCode" class="form-label"></label>
+                    <input asp-for="ColorCode" class="form-control" type="color" />
+                </div>
+                <div class="col-md-4">
+                    <label asp-for="SortOrder" class="form-label"></label>
+                    <input asp-for="SortOrder" class="form-control" type="number" />
+                </div>
+                <div class="col-md-4 d-flex align-items-end">
+                    <div class="form-check form-switch">
+                        <input asp-for="IsActive" class="form-check-input" type="checkbox" />
+                        <label asp-for="IsActive" class="form-check-label">Aktif</label>
+                    </div>
+                </div>
+            </div>
+            <div class="form-actions">
+                <button type="submit" class="btn-admin-primary"><i class="fas fa-save"></i> Güncelle</button>
+                <a asp-action="Categories" class="btn-admin-back"><i class="fas fa-arrow-left"></i> Geri Dön</a>
+            </div>
+        </form>
+    </div>
+</div>

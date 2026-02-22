@@ -1,0 +1,385 @@
+﻿@{
+    ViewData["Title"] = "Ana Sayfa";
+}
+
+<!-- Hero Section -->
+<section class="hero-section" 
+    style="background: linear-gradient(rgba(13, 37, 82, 0.65), rgba(13, 37, 82, 0.55)), 
+           url('/images/kuregtm.png') center/cover no-repeat;">
+    
+    <!-- Content -->
+    <div class="hero-parallax">
+        <div class="container">
+            <div class="hero-content">
+                <p class="hero-badge">Profesyonel Eğitim ve Seminerler</p>
+                <h1 class="hero-title">
+                    Kamu, Belediyeler ve<br>
+                    <strong>İş Dünyası</strong> için Mevzuat,<br>
+                    <span>Teknoloji ve Yetkinlik Programları</span>
+                </h1>
+                <p class="hero-subtitle">
+                    Yüz Yüze · Online · Hibrit&nbsp;&nbsp;|&nbsp;&nbsp;Sertifikalı Eğitimler
+                </p>
+                <div class="hero-buttons">
+                    <a asp-controller="Home" asp-action="TrainingCatalog" class="btn-hero-primary">
+                        Eğitimleri İncele <i class="fas fa-chevron-right"></i>
+                    </a>
+                    <a asp-controller="Home" asp-action="Contact" class="btn-hero-secondary">
+                        Kurumsal Teklif Al
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Service Cards -->
+<section class="section" style="margin-top: -3rem; position: relative; z-index: 10;">
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                <div class="service-card service-card-orange">
+                    <div class="service-card-icon">
+                        <i class="fas fa-balance-scale"></i>
+                    </div>
+                    <h3>Mevzuat & Hukuk</h3>
+                    <p>İhale, Kamu & Belediye Mevzuatı</p>
+                    <a asp-controller="Home" asp-action="TrainingCatalog" asp-fragment="kamu" class="btn-service btn-service-orange">
+                        Tüm Eğitimleri Gör <i class="fas fa-chevron-right"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                <div class="service-card service-card-blue">
+                    <div class="service-card-icon">
+                        <i class="fas fa-desktop"></i>
+                    </div>
+                    <h3>Teknoloji & Dijital Dönüşüm</h3>
+                    <p>Yapay Zeka, Veri Bilimi, Dijital Araçlar</p>
+                    <a asp-controller="Home" asp-action="TrainingCatalog" asp-fragment="teknoloji" class="btn-service btn-service-blue">
+                        Tüm Eğitimleri Gör <i class="fas fa-chevron-right"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                <div class="service-card service-card-orange">
+                    <div class="service-card-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3>Kişisel Gelişim</h3>
+                    <p>Liderlik, Etkili İletişim, Zaman Yönetimi</p>
+                    <a asp-controller="Home" asp-action="TrainingCatalog" asp-fragment="kisisel-gelisim" class="btn-service btn-service-orange">
+                        Tüm Eğitimleri Gör <i class="fas fa-chevron-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Antalya Seminars Section -->
+<section class="seminar-section" 
+    style="background: linear-gradient(rgba(100, 116, 139, 0.3), rgba(100, 116, 139, 0.3)), 
+           url('https://images.unsplash.com/photo-1730825109888-c13511e22500?w=1200&fit=crop') center/cover;">
+    <div class="container">
+        <div class="d-flex align-items-start justify-content-between mb-5">
+            <div>
+                <h2 class="text-white" style="font-size: 2.25rem; font-weight: 700; margin-bottom: 1rem;">
+                    Antalya'da Mevzuat ve İhale<br>
+                    Uygulamaları Seminerleri
+                </h2>
+                <div class="d-flex gap-1">
+                    <i class="fas fa-star" style="color: #facc15; font-size: 1.25rem;"></i>
+                    <i class="fas fa-star" style="color: #facc15; font-size: 1.25rem;"></i>
+                    <i class="fas fa-star" style="color: #facc15; font-size: 1.25rem;"></i>
+                    <i class="fas fa-star" style="color: #facc15; font-size: 1.25rem;"></i>
+                    <i class="fas fa-star" style="color: #facc15; font-size: 1.25rem;"></i>
+                </div>
+            </div>
+            <div class="d-none d-lg-block">
+                <div class="kontenjan-badge">
+                    <div class="label">KONTENJANLAR</div>
+                    <div class="value">SINIRLI</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row g-4 mb-4">
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                <div class="seminar-card">
+                    <span class="seminar-badge">Sınırlı Kontenjan!</span>
+                    <div class="seminar-date">
+                        <i class="fas fa-calendar-alt"></i>
+                        <span>25-27 Temmuz 2025</span>
+                    </div>
+                    <h4>İhale Uygulamaları ve Güncel Mevzuat Eğitimi</h4>
+                    <div class="seminar-location">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Kundu Deluxe Otel</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                <div class="seminar-card">
+                    <span class="seminar-badge">Sınırlı Kontenjan!</span>
+                    <div class="seminar-date">
+                        <i class="fas fa-calendar-alt"></i>
+                        <span>5 - 7 Eylül 2025</span>
+                    </div>
+                    <h4>Belediyeler için Mevzuat ve Denetim Eğitimi</h4>
+                    <div class="seminar-location">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Luxury Resort & Spa</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                <div class="seminar-card">
+                    <span class="seminar-badge">Sınırlı Kontenjan!</span>
+                    <div class="seminar-date">
+                        <i class="fas fa-calendar-alt"></i>
+                        <span>3 - 5 Ekim 2025</span>
+                    </div>
+                    <h4>Kamu İhale Mevzuatı ve Uygulamaları Eğitimi</h4>
+                    <div class="seminar-location">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Paradise Kundu Otel</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center">
+            <a asp-controller="Home" asp-action="TrainingCatalog" class="btn-view-all">
+                Tüm Seminerleri Gör <i class="fas fa-chevron-right"></i>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Popular Trainings -->
+<section class="section">
+    <div class="container">
+        <div class="popular-trainings-header">
+            <h2 style="font-size: 1.75rem; font-weight: 700; color: #1f2937;">Popüler Eğitimler</h2>
+            
+            <!-- Tabs -->
+            <div class="training-tabs" id="trainingTabs">
+                <button class="training-tab active" data-tab="all">Tüm</button>
+                <button class="training-tab" data-tab="kamu">Kamu</button>
+                <button class="training-tab" data-tab="teknoloji">Teknoloji</button>
+                <button class="training-tab" data-tab="gelisim">Eğitsel Gelişim</button>
+                <button class="training-tab" data-tab="ozel">Özel Sektör</button>
+            </div>
+        </div>
+
+        <!-- Training Cards -->
+        <div class="row g-4 mb-4">
+            <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                <div class="training-card">
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&h=250&fit=crop" 
+                         alt="Etkili İletişim" class="training-card-img">
+                    <div class="training-card-body">
+                        <h4>Etkili İletişim ve İkna Teknikleri</h4>
+                        <div class="training-meta">
+                            <div class="training-meta-item">
+                                <i class="fas fa-clock"></i> 4 Hafta 16 Saat
+                            </div>
+                            <div class="training-meta-item">
+                                <i class="fas fa-users"></i> 2.400+
+                            </div>
+                            <div class="training-meta-item">
+                                <i class="fas fa-award"></i> 6-7 Mart
+                            </div>
+                        </div>
+                        <div class="training-tags">
+                            <span class="training-tag tag-blue"><i class="fas fa-hashtag"></i> İletişim</span>
+                            <span class="training-tag tag-green"><i class="fas fa-award"></i> Temel</span>
+                            <span class="training-tag tag-orange"><i class="fas fa-map-marker-alt"></i> İstanbul</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                <div class="training-card">
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=250&fit=crop" 
+                         alt="Power BI" class="training-card-img">
+                    <div class="training-card-body">
+                        <h4>Power BI İle Raporlama</h4>
+                        <div class="training-meta">
+                            <div class="training-meta-item">
+                                <i class="fas fa-clock"></i> 1 Hafta Online
+                            </div>
+                            <div class="training-meta-item">
+                                <i class="fas fa-users"></i> 2 Hafta
+                            </div>
+                            <div class="training-meta-item">
+                                <i class="fas fa-award"></i> Sertifikalı
+                            </div>
+                        </div>
+                        <div class="training-tags">
+                            <span class="training-tag tag-blue"><i class="fas fa-hashtag"></i> Performans</span>
+                            <span class="training-tag tag-green"><i class="fas fa-award"></i> İleri</span>
+                            <span class="training-tag tag-orange"><i class="fas fa-map-marker-alt"></i> Online</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                <div class="training-card">
+                    <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=400&h=250&fit=crop" 
+                         alt="Siber Güvenlik" class="training-card-img">
+                    <div class="training-card-body">
+                        <h4>Siber Güvenlik Temel Eğitimi</h4>
+                        <div class="training-meta">
+                            <div class="training-meta-item">
+                                <i class="fas fa-clock"></i> 9 Saat
+                            </div>
+                            <div class="training-meta-item">
+                                <i class="fas fa-users"></i> Sınırsız
+                            </div>
+                            <div class="training-meta-item">
+                                <i class="fas fa-award"></i> 3 Gün
+                            </div>
+                        </div>
+                        <div class="training-tags">
+                            <span class="training-tag tag-blue"><i class="fas fa-hashtag"></i> Güvenlik</span>
+                            <span class="training-tag tag-green"><i class="fas fa-award"></i> İleri</span>
+                            <span class="training-tag tag-orange"><i class="fas fa-map-marker-alt"></i> Ankara</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="400">
+                <div class="training-card">
+                    <img src="https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?w=400&h=250&fit=crop" 
+                         alt="Dijital Dönüşüm" class="training-card-img">
+                    <div class="training-card-body">
+                        <h4>Belediyelerde Dijital Dönüşüm</h4>
+                        <div class="training-meta">
+                            <div class="training-meta-item">
+                                <i class="fas fa-clock"></i> Her Hafta
+                            </div>
+                            <div class="training-meta-item">
+                                <i class="fas fa-users"></i> 3 Hafta
+                            </div>
+                            <div class="training-meta-item">
+                                <i class="fas fa-award"></i> Sertifikalı
+                            </div>
+                        </div>
+                        <div class="training-tags">
+                            <span class="training-tag tag-blue"><i class="fas fa-hashtag"></i> Kamu</span>
+                            <span class="training-tag tag-green"><i class="fas fa-award"></i> Temel</span>
+                            <span class="training-tag tag-orange"><i class="fas fa-map-marker-alt"></i> İstanbul</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center">
+            <a asp-controller="Home" asp-action="TrainingCatalog" class="btn-view-all">
+                Tüm Eğitimleri Gör <i class="fas fa-chevron-right"></i>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Corporate Solutions -->
+<section class="corporate-section">
+    <div class="container">
+        <h2 class="text-white" style="font-size: 1.75rem; font-weight: 700; margin-bottom: 2rem;">Kurumsal Çözümlerimiz</h2>
+        
+        <div class="row g-4">
+            <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                <div class="corporate-card">
+                    <div class="corporate-card-header">
+                        <div class="corporate-card-icon red">
+                            <i class="fas fa-landmark"></i>
+                        </div>
+                        <div>
+                            <small class="text-muted" style="font-size: 0.7rem;">T.C.</small>
+                            <h5>Gümrük Müsteşarlığı</h5>
+                        </div>
+                    </div>
+                    <div class="corporate-card-desc">ABC Gıda Liderlik ve İletişim Eğitimleri</div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                <div class="corporate-card">
+                    <div class="corporate-card-header">
+                        <div class="corporate-card-icon blue">
+                            <i class="fas fa-university"></i>
+                        </div>
+                        <div>
+                            <h5>İstanbul Denetmentörü</h5>
+                        </div>
+                    </div>
+                    <div class="corporate-card-desc">XYZ Kurumu ile Mevzuat Eğitimleri</div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                <div class="corporate-card">
+                    <div class="corporate-card-header">
+                        <div class="corporate-card-icon orange">
+                            <i class="fas fa-industry"></i>
+                        </div>
+                        <div>
+                            <h5>Arçelik</h5>
+                        </div>
+                    </div>
+                    <div class="corporate-card-desc">İhale Danışmanlığı Başarı Hikayesi</div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="400">
+                <div class="corporate-card">
+                    <div class="corporate-card-header">
+                        <div class="corporate-card-icon red">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+                        <div>
+                            <h5>Naile Danışmanlık</h5>
+                        </div>
+                    </div>
+                    <div class="corporate-card-desc">Naile Danışmanlık Başarı Hikayesi</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="section-blue" style="padding: 4rem 0; margin-bottom: 4rem;">
+    <div class="container text-center" data-aos="fade-up">
+        <h2 style="font-size: 2rem; font-weight: 700; color: white; margin-bottom: 0.75rem;">Kurumunuz İçin Eğitim Planlayalım</h2>
+        <p style="color: rgba(255,255,255,0.85); margin-bottom: 1.5rem; font-size: 1rem;">
+            Eğitim ihtiyaçlarınızı birlikte değerlendirelim ve size özel program hazırlayalım.
+        </p>
+        <a asp-controller="Home" asp-action="Contact" class="btn-hero-primary">
+            <i class="fas fa-envelope me-2"></i>İletişime Geçin
+        </a>
+    </div>
+</section>
+
+@section Scripts {
+    <script>
+        // Training Tabs
+        document.querySelectorAll('.training-tab').forEach(tab => {
+            tab.addEventListener('click', function() {
+                document.querySelectorAll('.training-tab').forEach(t => t.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+
+        // Hero parallax effect
+        window.addEventListener('scroll', function() {
+            const scrolled = window.pageYOffset;
+            const heroContent = document.querySelector('.hero-content');
+            
+            if (heroContent && scrolled < window.innerHeight) {
+                heroContent.style.transform = `translateY(${scrolled * 0.15}px)`;
+                heroContent.style.opacity = 1 - (scrolled / window.innerHeight);
+            }
+        });
+    </script>
+}

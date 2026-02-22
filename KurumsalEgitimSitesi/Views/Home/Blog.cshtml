@@ -1,0 +1,120 @@
+@model List<KurumsalEgitimSitesi.Models.Announcement>
+@{
+    ViewData["Title"] = "Blog & Duyurular";
+}
+
+<!-- Page Header -->
+<section class="page-header">
+    <div class="container">
+        <h1 class="page-header-title" data-aos="fade-up">Blog & Duyurular</h1>
+        <div class="breadcrumb-custom" data-aos="fade-up" data-aos-delay="100">
+            <a asp-controller="Home" asp-action="Index">Ana Sayfa</a>
+            <span>/</span>
+            <span>Blog & Duyurular</span>
+        </div>
+    </div>
+</section>
+
+<!-- Filter -->
+<section class="py-5">
+    <div class="container">
+        <div class="d-flex flex-wrap gap-2 mb-4 justify-content-center" data-aos="fade-up">
+            <button class="btn btn-filter active" onclick="filterPosts('all', this)">Tümü</button>
+            <button class="btn btn-filter" onclick="filterPosts('Duyuru', this)">Duyurular</button>
+            <button class="btn btn-filter" onclick="filterPosts('Blog', this)">Blog</button>
+            <button class="btn btn-filter" onclick="filterPosts('Haber', this)">Haberler</button>
+        </div>
+
+        @if (Model.Any())
+        {
+            <div class="row g-4">
+                @foreach (var item in Model)
+                {
+                    <div class="col-lg-4 col-md-6 post-card" data-type="@item.Type" data-aos="fade-up">
+                        <div class="card border-0 shadow-sm h-100" style="border-radius: 12px; overflow: hidden; transition: all 0.3s;">
+                            <!-- Image or Gradient Header -->
+                            @if (!string.IsNullOrEmpty(item.ImageUrl))
+                            {
+                                <img src="@item.ImageUrl" class="card-img-top" alt="@item.Title" style="height: 200px; object-fit: cover;" />
+                            }
+                            else
+                            {
+                                <div style="height: 180px; background: linear-gradient(135deg, @(item.Type == "Blog" ? "#7c3aed, #a78bfa" : item.Type == "Haber" ? "#059669, #34d399" : "#2563eb, #60a5fa")); display: flex; align-items: center; justify-content: center;">
+                                    <i class="@(item.Type == "Blog" ? "fas fa-pen-fancy" : item.Type == "Haber" ? "fas fa-newspaper" : "fas fa-bullhorn") fa-3x text-white opacity-50"></i>
+                                </div>
+                            }
+                            <div class="card-body p-4">
+                                <div class="d-flex align-items-center gap-2 mb-3">
+                                    <span class="badge" style="background: @(item.Type == "Blog" ? "#f3e8ff; color: #7c3aed" : item.Type == "Haber" ? "#dcfce7; color: #15803d" : "#eff6ff; color: #2563eb");">@item.Type</span>
+                                    @if (item.PublishDate.HasValue)
+                                    {
+                                        <small class="text-muted"><i class="fas fa-clock me-1"></i>@item.PublishDate.Value.ToString("dd MMMM yyyy")</small>
+                                    }
+                                </div>
+                                <h5 class="fw-bold mb-2" style="line-height: 1.4;">@item.Title</h5>
+                                @if (!string.IsNullOrEmpty(item.Summary))
+                                {
+                                    <p class="text-muted small mb-3">@(item.Summary.Length > 120 ? item.Summary.Substring(0, 120) + "..." : item.Summary)</p>
+                                }
+                                <div class="d-flex align-items-center justify-content-between mt-auto">
+                                    @if (!string.IsNullOrEmpty(item.Author))
+                                    {
+                                        <small class="text-muted"><i class="fas fa-user me-1"></i>@item.Author</small>
+                                    }
+                                    <a asp-controller="Home" asp-action="BlogDetail" asp-route-id="@item.Id" class="fw-bold text-decoration-none" style="color: #2563eb; font-size: 0.875rem;">
+                                        Devamını Oku <i class="fas fa-arrow-right ms-1"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        }
+        else
+        {
+            <div class="text-center py-5">
+                <i class="fas fa-newspaper fa-3x text-muted mb-3"></i>
+                <h4 class="text-muted">Henüz içerik bulunmuyor.</h4>
+                <p class="text-muted">Yakında yeni içerikler eklenecektir.</p>
+            </div>
+        }
+    </div>
+</section>
+
+@section Scripts {
+<style>
+    .btn-filter {
+        background: #f1f5f9;
+        color: #475569;
+        border: 1px solid #e2e8f0;
+        border-radius: 20px;
+        padding: 0.4rem 1.25rem;
+        font-size: 0.875rem;
+        font-weight: 500;
+        transition: all 0.3s;
+    }
+    .btn-filter:hover, .btn-filter.active {
+        background: linear-gradient(135deg, #2563eb, #3b82f6);
+        color: white;
+        border-color: #2563eb;
+    }
+    .post-card .card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 30px rgba(0,0,0,0.12) !important;
+    }
+</style>
+<script>
+    function filterPosts(type, btn) {
+        document.querySelectorAll('.btn-filter').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        document.querySelectorAll('.post-card').forEach(card => {
+            if (type === 'all' || card.dataset.type === type) {
+                card.style.display = '';
+            } else {
+                card.style.display = 'none';
+            }
+        });
+    }
+</script>
+}

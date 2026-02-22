@@ -1,0 +1,194 @@
+<!-- Custom SVG Icons and Illustrations -->
+
+<!-- Training Category Icons - unDraw Style -->
+
+<!-- Kişisel Gelişim Icon -->
+<svg id="icon-personal-development" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="grad-gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#d4af37"/>
+      <stop offset="50%" style="stop-color:#f5d67a"/>
+      <stop offset="100%" style="stop-color:#b8941f"/>
+    </linearGradient>
+    <linearGradient id="grad-blue" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1e40af"/>
+      <stop offset="100%" style="stop-color:#3b82f6"/>
+    </linearGradient>
+  </defs>
+  <circle cx="60" cy="35" r="18" fill="url(#grad-gold)"/>
+  <path d="M30 95 Q30 65 60 60 Q90 65 90 95" fill="url(#grad-blue)" opacity="0.9"/>
+  <circle cx="50" cy="45" r="8" fill="none" stroke="#d4af37" stroke-width="2"/>
+  <path d="M70 30 l8 -12 l8 12" fill="none" stroke="#d4af37" stroke-width="2"/>
+  <circle cx="70" cy="15" r="3" fill="#d4af37"/>
+</svg>
+
+<!-- Teknoloji Icon -->
+<svg id="icon-technology" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+  <rect x="20" y="25" width="80" height="55" rx="5" fill="url(#grad-blue)"/>
+  <rect x="25" y="30" width="70" height="40" rx="3" fill="#0f172a"/>
+  <rect x="45" y="80" width="30" height="5" rx="2" fill="url(#grad-gold)"/>
+  <rect x="35" y="85" width="50" height="10" rx="3" fill="url(#grad-blue)"/>
+  <circle cx="60" cy="50" r="12" fill="none" stroke="#d4af37" stroke-width="2"/>
+  <path d="M55 50 l5 5 l10 -10" stroke="#d4af37" stroke-width="2" fill="none"/>
+</svg>
+
+<!-- Siber Güvenlik Icon -->
+<svg id="icon-cyber-security" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+  <path d="M60 15 L95 30 L95 60 Q95 90 60 105 Q25 90 25 60 L25 30 Z" fill="url(#grad-blue)" opacity="0.9"/>
+  <path d="M60 25 L85 37 L85 58 Q85 82 60 95 Q35 82 35 58 L35 37 Z" fill="#0f172a"/>
+  <circle cx="60" cy="60" r="15" fill="none" stroke="#d4af37" stroke-width="3"/>
+  <path d="M55 60 l5 5 l10 -12" stroke="#d4af37" stroke-width="3" fill="none"/>
+</svg>
+
+<!-- MS Office Icon -->
+<svg id="icon-office" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+  <rect x="20" y="20" width="35" height="35" rx="5" fill="#217346"/>
+  <rect x="65" y="20" width="35" height="35" rx="5" fill="#2b579a"/>
+  <rect x="20" y="65" width="35" height="35" rx="5" fill="#d24726"/>
+  <rect x="65" y="65" width="35" height="35" rx="5" fill="#7b7b7b"/>
+  <text x="37" y="44" font-size="18" fill="white" text-anchor="middle" font-weight="bold">X</text>
+  <text x="82" y="44" font-size="18" fill="white" text-anchor="middle" font-weight="bold">W</text>
+  <text x="37" y="89" font-size="18" fill="white" text-anchor="middle" font-weight="bold">P</text>
+  <text x="82" y="89" font-size="18" fill="white" text-anchor="middle" font-weight="bold">O</text>
+</svg>
+
+<!-- Protokol Icon -->
+<svg id="icon-protocol" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+  <path d="M60 20 L80 35 L80 90 L40 90 L40 35 Z" fill="url(#grad-blue)"/>
+  <circle cx="60" cy="50" r="12" fill="url(#grad-gold)"/>
+  <rect x="50" y="65" width="20" height="20" rx="2" fill="url(#grad-gold)"/>
+  <path d="M30 95 Q30 85 45 85 L75 85 Q90 85 90 95" fill="none" stroke="#d4af37" stroke-width="2"/>
+  <circle cx="35" cy="75" r="8" fill="url(#grad-blue)" opacity="0.6"/>
+  <circle cx="85" cy="75" r="8" fill="url(#grad-blue)" opacity="0.6"/>
+</svg>
+
+<!-- Kamu Icon -->
+<svg id="icon-public" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+  <rect x="25" y="50" width="70" height="50" fill="url(#grad-blue)"/>
+  <polygon points="60,20 95,50 25,50" fill="url(#grad-gold)"/>
+  <rect x="35" y="60" width="15" height="20" fill="#0f172a"/>
+  <rect x="52" y="60" width="15" height="35" fill="#0f172a"/>
+  <rect x="70" y="60" width="15" height="20" fill="#0f172a"/>
+  <circle cx="60" cy="38" r="6" fill="#0f172a"/>
+  <rect x="45" y="95" width="30" height="5" fill="url(#grad-gold)"/>
+</svg>
+
+<!-- KVKK Icon -->
+<svg id="icon-kvkk" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="60" cy="45" r="25" fill="url(#grad-blue)"/>
+  <circle cx="60" cy="45" r="15" fill="#0f172a"/>
+  <circle cx="60" cy="45" r="5" fill="url(#grad-gold)"/>
+  <rect x="40" y="75" width="40" height="30" rx="5" fill="url(#grad-gold)"/>
+  <rect x="55" y="80" width="10" height="15" rx="2" fill="#0f172a"/>
+  <circle cx="60" cy="95" r="3" fill="url(#grad-gold)"/>
+</svg>
+
+<!-- Geometric Pattern Divider -->
+<svg id="pattern-divider" viewBox="0 0 1200 100" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+  <defs>
+    <linearGradient id="grad-divider" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#1e40af;stop-opacity:0.1"/>
+      <stop offset="50%" style="stop-color:#d4af37;stop-opacity:0.3"/>
+      <stop offset="100%" style="stop-color:#1e40af;stop-opacity:0.1"/>
+    </linearGradient>
+  </defs>
+  <path d="M0 50 Q300 0 600 50 T1200 50" fill="none" stroke="url(#grad-divider)" stroke-width="2"/>
+  <circle cx="200" cy="50" r="4" fill="#d4af37" opacity="0.5"/>
+  <circle cx="400" cy="30" r="3" fill="#1e40af" opacity="0.3"/>
+  <circle cx="600" cy="50" r="5" fill="#d4af37" opacity="0.6"/>
+  <circle cx="800" cy="70" r="3" fill="#1e40af" opacity="0.3"/>
+  <circle cx="1000" cy="50" r="4" fill="#d4af37" opacity="0.5"/>
+  <polygon points="580,45 600,35 620,45 600,55" fill="#d4af37" opacity="0.4"/>
+</svg>
+
+<!-- Floating Geometric Shapes -->
+<svg id="floating-shapes" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+  <polygon points="50,100 80,40 110,100" fill="#d4af37" opacity="0.15"/>
+  <circle cx="320" cy="80" r="30" fill="#1e40af" opacity="0.1"/>
+  <rect x="60" y="280" width="50" height="50" rx="8" fill="#3b82f6" opacity="0.08" transform="rotate(15 85 305)"/>
+  <polygon points="300,350 330,290 360,350" fill="#d4af37" opacity="0.12"/>
+  <circle cx="180" cy="200" r="20" fill="none" stroke="#d4af37" stroke-width="2" opacity="0.2"/>
+  <rect x="280" y="180" width="35" height="35" fill="none" stroke="#1e40af" stroke-width="2" opacity="0.15" transform="rotate(45 297.5 197.5)"/>
+</svg>
+
+<!-- Hexagon Pattern -->
+<svg id="hexagon-pattern" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <pattern id="hexagons" width="50" height="43.4" patternUnits="userSpaceOnUse" patternTransform="scale(0.5)">
+      <polygon points="25,0 50,14.4 50,43.4 25,57.8 0,43.4 0,14.4" fill="none" stroke="#d4af37" stroke-width="0.5" opacity="0.2"/>
+    </pattern>
+  </defs>
+  <rect width="100" height="100" fill="url(#hexagons)"/>
+</svg>
+
+<!-- Blob Shape 1 -->
+<svg id="blob-1" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <path d="M45,-65.5C58.5,-55.8,69.8,-42.5,76.1,-26.8C82.4,-11.1,83.7,7,78.5,22.5C73.3,38,61.6,50.9,47.7,60.8C33.8,70.7,17.7,77.5,0.3,77.1C-17.1,76.7,-34.2,69.1,-48.5,58.1C-62.8,47.1,-74.3,32.7,-78.9,16.4C-83.5,0.1,-81.2,-18.1,-73.2,-33.1C-65.2,-48.1,-51.5,-60,-36.7,-69.1C-21.9,-78.2,-6,-84.5,7,-83.6C20,-82.7,31.5,-75.2,45,-65.5Z" transform="translate(100 100)" fill="url(#grad-gold)" opacity="0.1"/>
+</svg>
+
+<!-- Blob Shape 2 -->
+<svg id="blob-2" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <path d="M39.5,-51.6C52,-42.3,63.6,-31.5,69.8,-17.5C76,-3.5,76.8,13.7,70.6,28.1C64.4,42.5,51.2,54.1,36.4,62.1C21.6,70.1,5.2,74.5,-10.8,72.8C-26.8,71.1,-42.4,63.3,-54.5,51.8C-66.6,40.3,-75.2,25.1,-77.5,8.8C-79.8,-7.5,-75.8,-24.9,-66.4,-38.2C-57,-51.5,-42.2,-60.7,-27.4,-68.8C-12.6,-76.9,2.2,-83.9,16.2,-80.1C30.2,-76.3,43.4,-61.7,39.5,-51.6Z" transform="translate(100 100)" fill="url(#grad-blue)" opacity="0.08"/>
+</svg>
+
+<!-- Statistics Infographic Elements -->
+<svg id="stat-people" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="30" cy="18" r="10" fill="url(#grad-gold)"/>
+  <path d="M10 55 Q10 35 30 30 Q50 35 50 55" fill="url(#grad-blue)"/>
+  <circle cx="15" cy="25" r="6" fill="url(#grad-gold)" opacity="0.6"/>
+  <path d="M5 50 Q5 38 15 35 Q25 38 25 50" fill="url(#grad-blue)" opacity="0.6"/>
+  <circle cx="45" cy="25" r="6" fill="url(#grad-gold)" opacity="0.6"/>
+  <path d="M35 50 Q35 38 45 35 Q55 38 55 50" fill="url(#grad-blue)" opacity="0.6"/>
+</svg>
+
+<svg id="stat-building" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
+  <rect x="15" y="20" width="30" height="35" fill="url(#grad-blue)"/>
+  <polygon points="30,8 50,20 10,20" fill="url(#grad-gold)"/>
+  <rect x="20" y="28" width="8" height="8" fill="#0f172a"/>
+  <rect x="32" y="28" width="8" height="8" fill="#0f172a"/>
+  <rect x="20" y="40" width="8" height="8" fill="#0f172a"/>
+  <rect x="32" y="40" width="8" height="8" fill="#0f172a"/>
+  <rect x="26" y="50" width="8" height="10" fill="#d4af37"/>
+</svg>
+
+<svg id="stat-certificate" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
+  <rect x="10" y="8" width="40" height="35" rx="3" fill="url(#grad-blue)"/>
+  <line x1="18" y1="18" x2="42" y2="18" stroke="#d4af37" stroke-width="2"/>
+  <line x1="18" y1="26" x2="42" y2="26" stroke="#d4af37" stroke-width="1.5" opacity="0.7"/>
+  <line x1="18" y1="32" x2="35" y2="32" stroke="#d4af37" stroke-width="1.5" opacity="0.5"/>
+  <circle cx="30" cy="52" r="8" fill="url(#grad-gold)"/>
+  <path d="M25 52 l5 5 l8 -10" stroke="#0f172a" stroke-width="2" fill="none"/>
+  <path d="M28 60 l2 -5 l4 0 l2 5" fill="url(#grad-gold)"/>
+</svg>
+
+<svg id="stat-clock" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="30" cy="30" r="25" fill="url(#grad-blue)"/>
+  <circle cx="30" cy="30" r="20" fill="#0f172a"/>
+  <line x1="30" y1="30" x2="30" y2="16" stroke="#d4af37" stroke-width="3" stroke-linecap="round"/>
+  <line x1="30" y1="30" x2="42" y2="30" stroke="#d4af37" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="30" cy="30" r="3" fill="#d4af37"/>
+  <circle cx="30" cy="12" r="2" fill="#d4af37" opacity="0.5"/>
+  <circle cx="48" cy="30" r="2" fill="#d4af37" opacity="0.5"/>
+  <circle cx="30" cy="48" r="2" fill="#d4af37" opacity="0.5"/>
+  <circle cx="12" cy="30" r="2" fill="#d4af37" opacity="0.5"/>
+</svg>
+
+<!-- Custom Logo -->
+<svg id="logo" viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="logo-gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#d4af37"/>
+      <stop offset="100%" style="stop-color:#f5d67a"/>
+    </linearGradient>
+    <linearGradient id="logo-blue" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1e40af"/>
+      <stop offset="100%" style="stop-color:#3b82f6"/>
+    </linearGradient>
+  </defs>
+  <!-- Logo Mark -->
+  <polygon points="10,50 30,10 50,50" fill="url(#logo-blue)"/>
+  <polygon points="20,50 30,25 40,50" fill="url(#logo-gold)"/>
+  <circle cx="30" cy="18" r="5" fill="url(#logo-gold)"/>
+  <!-- Decorative Lines -->
+  <line x1="55" y1="15" x2="55" y2="45" stroke="#d4af37" stroke-width="1"/>
+</svg>

@@ -1,0 +1,229 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Kurumsal Eğitim Hizmetleri - Kamu ve özel sektör için profesyonel eğitim çözümleri" />
+    <title>@ViewData["Title"] - Kurumsal Eğitim</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+    
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/proportions-fix.css" asp-append-version="true" />
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-custom" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand logo-container" asp-controller="Home" asp-action="Index">
+                <div class="logo-mark"></div>
+                <div class="logo-text-container">
+                    <span class="logo-text-primary">Kurumsal Eğitim</span>
+                    <span class="logo-text-secondary">Profesyonel Eğitim</span>
+                </div>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Menüyü Aç">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link nav-link-custom dropdown-toggle" href="#" id="egitimlerDropdown" role="button" 
+                           data-bs-toggle="dropdown" aria-expanded="false">
+                            Eğitimler
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="egitimlerDropdown">
+                            <li><a class="dropdown-item" asp-controller="Home" asp-action="TrainingCatalog" asp-fragment="kisisel-gelisim">Kişisel Gelişim</a></li>
+                            <li><a class="dropdown-item" asp-controller="Home" asp-action="TrainingCatalog" asp-fragment="teknoloji">Teknoloji Eğitimleri</a></li>
+                            <li><a class="dropdown-item" asp-controller="Home" asp-action="TrainingCatalog" asp-fragment="siber-guvenlik">Siber Güvenlik</a></li>
+                            <li><a class="dropdown-item" asp-controller="Home" asp-action="TrainingCatalog" asp-fragment="kamu">Kamu Kurumları Eğitimleri</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item fw-bold" asp-controller="Home" asp-action="TrainingCatalog">Tüm Eğitimler</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link nav-link-custom" asp-controller="Home" asp-action="Calendar">Takvim</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link nav-link-custom" asp-controller="Home" asp-action="Advantages">Avantajlar</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link nav-link-custom" asp-controller="Home" asp-action="Blog">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link nav-link-custom" asp-controller="Home" asp-action="About">Hakkımızda</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link nav-link-custom" asp-controller="Home" asp-action="Contact">İletişim</a>
+                    </li>
+                    <li class="nav-item ms-lg-2">
+                        <a class="btn btn-nav-cta" asp-controller="Home" asp-action="Contact">
+                            Teklif Al
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        @RenderBody()
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row g-4 mb-4">
+                <!-- Company Info -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="d-flex align-items-center gap-2 mb-3">
+                        <div class="logo-mark" style="width: 36px; height: 36px;"></div>
+                        <div>
+                            <div style="font-size: 1rem; font-weight: 600;">Kurumsal Eğitim</div>
+                            <div style="font-size: 0.7rem; color: #9ca3af;">Profesyonel Eğitim</div>
+                        </div>
+                    </div>
+                    <p class="footer-desc">
+                        Profesyonel eğitim ve seminerler ile kamu ve özel sektöre hizmet veriyoruz.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Kurumsal -->
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="footer-title">Kurumsal</h5>
+                    <ul class="footer-links">
+                        <li><a asp-controller="Home" asp-action="About">Hakkımızda</a></li>
+                        <li><a asp-controller="Home" asp-action="About">Misyon & Vizyon</a></li>
+                        <li><a asp-controller="Home" asp-action="About">Eğitmenlerimiz</a></li>
+                        <li><a asp-controller="Home" asp-action="References">Referanslarımız</a></li>
+                        <li><a asp-controller="Home" asp-action="Advantages">Katılımcı Avantajları</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Eğitimler -->
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="footer-title">Eğitimler</h5>
+                    <ul class="footer-links">
+                        <li><a asp-controller="Home" asp-action="TrainingCatalog" asp-fragment="kisisel-gelisim">Mevzuat & Hukuk</a></li>
+                        <li><a asp-controller="Home" asp-action="TrainingCatalog" asp-fragment="teknoloji">Teknoloji & Dijital Dönüşüm</a></li>
+                        <li><a asp-controller="Home" asp-action="TrainingCatalog" asp-fragment="kisisel-gelisim">Kişisel Gelişim</a></li>
+                        <li><a asp-controller="Home" asp-action="TrainingCatalog">Online Eğitimler</a></li>
+                        <li><a asp-controller="Home" asp-action="Calendar">Eğitim Takvimi</a></li>
+                        <li><a asp-controller="Home" asp-action="Blog">Blog & Duyurular</a></li>
+                    </ul>
+                </div>
+                
+                <!-- İletişim -->
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="footer-title">İletişim</h5>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Atatürk Bulvarı No:123<br>Çankaya, Ankara</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-phone-alt"></i>
+                        <a href="tel:+902121234567" style="color: #d1d5db;">+90 (212) 123 45 67</a>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:info@kurumsalegitim.com" style="color: #d1d5db;">info@kurumsalegitim.com</a>
+                    </div>
+                    <div class="mt-3">
+                        <a asp-controller="Home" asp-action="Contact" class="btn-footer-cta">İletişime Geç</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Newsletter Section -->
+            <div class="row mt-4 pt-4" style="border-top: 1px solid rgba(255,255,255,0.08);" id="newsletter">
+                <div class="col-lg-6 mb-3 mb-lg-0">
+                    <h5 style="font-weight: 600; color: white; margin-bottom: 0.5rem;"><i class="fas fa-envelope me-2" style="color: #f97316;"></i>Bültenimize Abone Olun</h5>
+                    <p style="color: #9ca3af; font-size: 0.875rem; margin: 0;">Eğitim fırsatları ve güncel duyurulardan haberdar olun.</p>
+                </div>
+                <div class="col-lg-6">
+                    @if (TempData["NewsletterSuccess"] != null)
+                    {
+                        <div class="alert alert-success py-2 px-3 mb-0" style="font-size: 0.85rem; border-radius: 8px;"><i class="fas fa-check-circle me-1"></i>@TempData["NewsletterSuccess"]</div>
+                    }
+                    else if (TempData["NewsletterError"] != null)
+                    {
+                        <div class="alert alert-danger py-2 px-3 mb-0" style="font-size: 0.85rem; border-radius: 8px;"><i class="fas fa-exclamation-circle me-1"></i>@TempData["NewsletterError"]</div>
+                    }
+                    else
+                    {
+                        <form asp-controller="Home" asp-action="Subscribe" method="post" class="d-flex gap-2">
+                            @Html.AntiForgeryToken()
+                            <input type="text" name="fullName" class="form-control" placeholder="Adınız" style="border-radius: 8px; border: 1px solid rgba(255,255,255,0.15); background: rgba(255,255,255,0.05); color: white; max-width: 160px; font-size: 0.875rem;" />
+                            <input type="email" name="email" class="form-control" placeholder="E-posta adresiniz" required style="border-radius: 8px; border: 1px solid rgba(255,255,255,0.15); background: rgba(255,255,255,0.05); color: white; font-size: 0.875rem;" />
+                            <button type="submit" class="btn px-4" style="background: linear-gradient(135deg, #f97316, #ea580c); color: white; border-radius: 8px; white-space: nowrap; font-size: 0.875rem; font-weight: 500;">Abone Ol</button>
+                        </form>
+                    }
+                </div>
+            </div>
+        </div>
+        
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+                    <p>&copy; @DateTime.Now.Year Kurumsal Eğitim Hizmetleri. Tüm hakları saklıdır.</p>
+                    <div class="footer-bottom-links">
+                        <a href="#">Gizlilik Politikası</a>
+                        <a href="#">Kullanım Koşulları</a>
+                        <a href="#">KVKK</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 600,
+            easing: 'ease-out',
+            once: true,
+            offset: 80
+        });
+        
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('mainNav');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+    </script>
+    
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

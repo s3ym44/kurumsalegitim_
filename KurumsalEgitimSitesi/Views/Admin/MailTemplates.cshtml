@@ -1,0 +1,48 @@
+@model List<KurumsalEgitimSitesi.Models.MailTemplate>
+@{
+    ViewData["Title"] = "Mail Şablonları";
+    Layout = "~/Views/Admin/_AdminLayout.cshtml";
+}
+
+<div class="admin-page-header">
+    <h1><i class="fas fa-envelope-open-text"></i> Mail Şablonları</h1>
+    <a asp-action="MailTemplateCreate" class="btn-admin-primary"><i class="fas fa-plus"></i> Yeni Şablon</a>
+</div>
+
+<div class="admin-card">
+    <div class="admin-card-body" style="padding: 0;">
+        @if (Model.Any())
+        {
+            <table class="admin-table">
+                <thead>
+                    <tr><th>#</th><th>Şablon Adı</th><th>Konu</th><th>Durum</th><th>Oluşturulma</th><th>İşlemler</th></tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.Id</td>
+                            <td><strong>@item.Name</strong></td>
+                            <td>@item.Subject</td>
+                            <td>@(item.IsActive ? Html.Raw("<span class='badge-active'>Aktif</span>") : Html.Raw("<span class='badge-inactive'>Pasif</span>"))</td>
+                            <td>@item.CreatedAt.ToString("dd MMM yyyy")</td>
+                            <td>
+                                <div class="d-flex gap-1">
+                                    <a asp-action="MailTemplateEdit" asp-route-id="@item.Id" class="btn-admin-sm btn-admin-edit"><i class="fas fa-edit"></i></a>
+                                    <form asp-action="MailTemplateDelete" asp-route-id="@item.Id" method="post" onsubmit="return confirm('Bu şablonu silmek istediğinize emin misiniz?');">
+                                        @Html.AntiForgeryToken()
+                                        <button type="submit" class="btn-admin-sm btn-admin-delete"><i class="fas fa-trash-alt"></i></button>
+                                    </form>
+                                </div>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        }
+        else
+        {
+            <div class="empty-state"><i class="fas fa-envelope-open-text"></i><p>Henüz mail şablonu eklenmemiş.</p></div>
+        }
+    </div>
+</div>

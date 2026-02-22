@@ -1,0 +1,73 @@
+@model KurumsalEgitimSitesi.Models.PartnerAdvantage
+@{
+    ViewData["Title"] = "Yeni Avantaj";
+    Layout = "~/Views/Admin/_AdminLayout.cshtml";
+}
+
+<div class="admin-page-header">
+    <h1><i class="fas fa-plus-circle"></i> Yeni Avantaj</h1>
+</div>
+
+<div class="admin-card">
+    <div class="admin-card-body">
+        <form asp-action="AdvantageCreate" method="post" class="admin-form">
+            @Html.AntiForgeryToken()
+            <div class="row g-3">
+                <div class="col-md-6">
+                    <label asp-for="PartnerName" class="form-label"></label>
+                    <input asp-for="PartnerName" class="form-control" placeholder="Partner / Kurum adı" />
+                    <span asp-validation-for="PartnerName" class="text-danger small"></span>
+                </div>
+                <div class="col-md-6">
+                    <label asp-for="Title" class="form-label"></label>
+                    <input asp-for="Title" class="form-control" placeholder="Avantaj başlığı" />
+                    <span asp-validation-for="Title" class="text-danger small"></span>
+                </div>
+                <div class="col-md-12">
+                    <label asp-for="Description" class="form-label"></label>
+                    <textarea asp-for="Description" class="form-control" rows="3" placeholder="Açıklama"></textarea>
+                </div>
+                <div class="col-md-4">
+                    <label asp-for="Category" class="form-label"></label>
+                    <select asp-for="Category" class="form-select">
+                        <option value="Üniversite">Üniversite</option>
+                        <option value="Akaryakıt">Akaryakıt</option>
+                        <option value="Konaklama">Konaklama</option>
+                        <option value="Teknoloji">Teknoloji</option>
+                        <option value="Genel">Genel</option>
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    <label asp-for="DiscountDetail" class="form-label"></label>
+                    <input asp-for="DiscountDetail" class="form-control" placeholder="ör: %20 İndirim" />
+                </div>
+                <div class="col-md-4">
+                    <label asp-for="IconClass" class="form-label"></label>
+                    <input asp-for="IconClass" class="form-control" placeholder="fas fa-university" />
+                </div>
+                <div class="col-md-12">
+                    <label asp-for="Conditions" class="form-label"></label>
+                    <textarea asp-for="Conditions" class="form-control" rows="2" placeholder="Koşullar"></textarea>
+                </div>
+                <div class="col-md-4">
+                    <label asp-for="LinkUrl" class="form-label"></label>
+                    <input asp-for="LinkUrl" class="form-control" placeholder="https://..." />
+                </div>
+                <div class="col-md-4">
+                    <label asp-for="SortOrder" class="form-label"></label>
+                    <input asp-for="SortOrder" class="form-control" type="number" />
+                </div>
+                <div class="col-md-4 d-flex align-items-end">
+                    <div class="form-check form-switch">
+                        <input asp-for="IsActive" class="form-check-input" type="checkbox" checked />
+                        <label asp-for="IsActive" class="form-check-label">Aktif</label>
+                    </div>
+                </div>
+            </div>
+            <div class="form-actions">
+                <button type="submit" class="btn-admin-primary"><i class="fas fa-save"></i> Kaydet</button>
+                <a asp-action="Advantages" class="btn-admin-back"><i class="fas fa-arrow-left"></i> Geri Dön</a>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,165 @@
+@model List<KurumsalEgitimSitesi.Models.PartnerAdvantage>
+@{
+    ViewData["Title"] = "Katılımcı Avantajları";
+}
+
+<!-- Page Header -->
+<section class="page-header">
+    <div class="container">
+        <h1 class="page-header-title" data-aos="fade-up">Katılımcı Avantajları</h1>
+        <div class="breadcrumb-custom" data-aos="fade-up" data-aos-delay="100">
+            <a asp-controller="Home" asp-action="Index">Ana Sayfa</a>
+            <span>/</span>
+            <span>Katılımcı Avantajları</span>
+        </div>
+    </div>
+</section>
+
+<!-- Intro -->
+<section class="py-5" style="background: white;">
+    <div class="container">
+        <div class="row align-items-center g-4" data-aos="fade-up">
+            <div class="col-lg-6">
+                <h2 class="fw-bold mb-3">Eğitimlerimize Katılın, <span style="color: #2563eb;">Avantajlardan Yararlanın</span></h2>
+                <p class="text-muted" style="line-height: 1.8;">Kurumsal Eğitim olarak katılımcılarımıza sadece kaliteli eğitim değil, aynı zamanda iş ortaklarımız aracılığıyla birçok ek avantaj sunuyoruz. Üniversite indirimleri, akaryakıt fırsatları ve daha fazlası sizi bekliyor.</p>
+            </div>
+            <div class="col-lg-6">
+                <div class="row g-3 text-center">
+                    <div class="col-6">
+                        <div style="background: #eff6ff; border-radius: 16px; padding: 1.5rem 1rem;">
+                            <i class="fas fa-university fa-2x mb-2" style="color: #2563eb;"></i>
+                            <div class="fw-bold" style="font-size: 0.85rem;">Üniversite<br>İndirimleri</div>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div style="background: #fef3c7; border-radius: 16px; padding: 1.5rem 1rem;">
+                            <i class="fas fa-gas-pump fa-2x mb-2" style="color: #d97706;"></i>
+                            <div class="fw-bold" style="font-size: 0.85rem;">Akaryakıt<br>İndirimleri</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Filter & Cards -->
+<section class="py-5">
+    <div class="container">
+        <div class="d-flex flex-wrap gap-2 mb-4 justify-content-center" data-aos="fade-up">
+            <button class="btn btn-filter active" onclick="filterAdv('all', this)">Tümü</button>
+            <button class="btn btn-filter" onclick="filterAdv('Üniversite', this)">Üniversite</button>
+            <button class="btn btn-filter" onclick="filterAdv('Akaryakıt', this)">Akaryakıt</button>
+        </div>
+
+        @{
+            var universities = Model.Where(a => a.Category == "Üniversite").ToList();
+            var fuels = Model.Where(a => a.Category == "Akaryakıt").ToList();
+        }
+
+        @if (Model.Any())
+        {
+            @if (universities.Any())
+            {
+                <h3 class="fw-bold mb-4" data-aos="fade-up">
+                    <i class="fas fa-graduation-cap me-2" style="color: #7c3aed;"></i>Yüksek Lisans & Doktora İndirimleri
+                </h3>
+                <div class="row g-4 mb-5">
+                    @foreach (var item in universities)
+                    {
+                        <div class="col-lg-4 col-md-6 adv-card" data-cat="@item.Category" data-aos="fade-up">
+                            <div class="card border-0 shadow-sm h-100" style="border-radius: 12px; overflow: hidden; transition: all 0.3s;">
+                                <div style="background: linear-gradient(135deg, #7c3aed, #a78bfa); padding: 1.25rem; color: white;">
+                                    <div class="d-flex justify-content-between align-items-start">
+                                        <i class="@item.IconClass fa-2x opacity-75"></i>
+                                        <span class="badge bg-white text-dark fw-bold" style="font-size: 0.85rem;">@item.DiscountDetail</span>
+                                    </div>
+                                    <h5 class="fw-bold mt-3 mb-0">@item.PartnerName</h5>
+                                </div>
+                                <div class="card-body p-4">
+                                    <h6 class="fw-bold mb-2">@item.Title</h6>
+                                    <p class="text-muted small mb-3">@item.Description</p>
+                                    @if (!string.IsNullOrEmpty(item.Conditions))
+                                    {
+                                        <div class="p-3" style="background: #f8fafc; border-radius: 8px; border-left: 3px solid #7c3aed;">
+                                            <small class="text-muted"><i class="fas fa-info-circle me-1"></i>@item.Conditions</small>
+                                        </div>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            }
+
+            @if (fuels.Any())
+            {
+                <h3 class="fw-bold mb-4" data-aos="fade-up">
+                    <i class="fas fa-gas-pump me-2" style="color: #d97706;"></i>Akaryakıt İndirimleri
+                </h3>
+                <div class="row g-4 mb-5">
+                    @foreach (var item in fuels)
+                    {
+                        <div class="col-lg-4 col-md-6 adv-card" data-cat="@item.Category" data-aos="fade-up">
+                            <div class="card border-0 shadow-sm h-100" style="border-radius: 12px; overflow: hidden; transition: all 0.3s;">
+                                <div style="background: linear-gradient(135deg, #d97706, #f59e0b); padding: 1.25rem; color: white;">
+                                    <div class="d-flex justify-content-between align-items-start">
+                                        <i class="@item.IconClass fa-2x opacity-75"></i>
+                                        <span class="badge bg-white text-dark fw-bold" style="font-size: 0.85rem;">@item.DiscountDetail</span>
+                                    </div>
+                                    <h5 class="fw-bold mt-3 mb-0">@item.PartnerName</h5>
+                                </div>
+                                <div class="card-body p-4">
+                                    <h6 class="fw-bold mb-2">@item.Title</h6>
+                                    <p class="text-muted small mb-3">@item.Description</p>
+                                    @if (!string.IsNullOrEmpty(item.Conditions))
+                                    {
+                                        <div class="p-3" style="background: #f8fafc; border-radius: 8px; border-left: 3px solid #d97706;">
+                                            <small class="text-muted"><i class="fas fa-info-circle me-1"></i>@item.Conditions</small>
+                                        </div>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            }
+
+        }
+        else
+        {
+            <div class="text-center py-5">
+                <i class="fas fa-gift fa-3x text-muted mb-3"></i>
+                <h4 class="text-muted">Henüz avantaj bulunmuyor.</h4>
+            </div>
+        }
+    </div>
+</section>
+
+<!-- CTA -->
+<section style="background: linear-gradient(135deg, #0f172a, #1e3a5f); padding: 4rem 0; margin-bottom: 4rem; border-radius: 16px;">
+    <div class="container text-center text-white">
+        <h3 class="fw-bold mb-3" style="color: #ffffff;" data-aos="fade-up">Avantajlardan Yararlanmak İçin</h3>
+        <p class="opacity-75 mb-4" data-aos="fade-up" data-aos-delay="100">Eğitimlerimize katılın ve tüm bu fırsatlardan faydalanın.</p>
+        <a asp-controller="Home" asp-action="Contact" class="btn btn-lg px-5 py-3" style="background: linear-gradient(135deg, #f97316, #ea580c); color: white; border-radius: 8px; font-weight: 600;" data-aos="fade-up" data-aos-delay="200">
+            <i class="fas fa-paper-plane me-2"></i> Bilgi Al
+        </a>
+    </div>
+</section>
+
+@section Scripts {
+<style>
+    .btn-filter { background: #f1f5f9; color: #475569; border: 1px solid #e2e8f0; border-radius: 20px; padding: 0.4rem 1.25rem; font-size: 0.875rem; font-weight: 500; transition: all 0.3s; }
+    .btn-filter:hover, .btn-filter.active { background: linear-gradient(135deg, #2563eb, #3b82f6); color: white; border-color: #2563eb; }
+    .adv-card .card:hover { transform: translateY(-4px); box-shadow: 0 8px 30px rgba(0,0,0,0.12) !important; }
+</style>
+<script>
+    function filterAdv(cat, btn) {
+        document.querySelectorAll('.btn-filter').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        document.querySelectorAll('.adv-card').forEach(card => {
+            card.style.display = (cat === 'all' || card.dataset.cat === cat) ? '' : 'none';
+        });
+    }
+</script>
+}

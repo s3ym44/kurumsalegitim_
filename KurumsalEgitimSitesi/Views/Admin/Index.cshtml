@@ -1,0 +1,131 @@
+@{
+    ViewData["Title"] = "Dashboard";
+    Layout = "~/Views/Admin/_AdminLayout.cshtml";
+}
+
+<div class="admin-page-header">
+    <h1><i class="fas fa-tachometer-alt"></i> Dashboard</h1>
+</div>
+
+<!-- Stat Cards -->
+<div class="stat-cards">
+    <div class="stat-card">
+        <div class="stat-card-icon blue"><i class="fas fa-folder-open"></i></div>
+        <div class="stat-card-info">
+            <h3>@ViewBag.CategoryCount</h3>
+            <p>Kategori</p>
+        </div>
+    </div>
+    <div class="stat-card">
+        <div class="stat-card-icon green"><i class="fas fa-book-open"></i></div>
+        <div class="stat-card-info">
+            <h3>@ViewBag.TrainingCount</h3>
+            <p>Eğitim</p>
+        </div>
+    </div>
+    <div class="stat-card">
+        <div class="stat-card-icon orange"><i class="fas fa-calendar-alt"></i></div>
+        <div class="stat-card-info">
+            <h3>@ViewBag.EventCount</h3>
+            <p>Etkinlik</p>
+        </div>
+    </div>
+    <div class="stat-card">
+        <div class="stat-card-icon purple"><i class="fas fa-bullhorn"></i></div>
+        <div class="stat-card-info">
+            <h3>@ViewBag.AnnouncementCount</h3>
+            <p>Duyuru</p>
+        </div>
+    </div>
+    <div class="stat-card">
+        <div class="stat-card-icon cyan"><i class="fas fa-building"></i></div>
+        <div class="stat-card-info">
+            <h3>@ViewBag.ReferenceCount</h3>
+            <p>Referans</p>
+        </div>
+    </div>
+</div>
+
+<div class="row g-4">
+    <!-- Upcoming Events -->
+    <div class="col-lg-6">
+        <div class="admin-card">
+            <div class="admin-card-header">
+                <h5><i class="fas fa-calendar-alt me-2 text-primary"></i>Yaklaşan Etkinlikler</h5>
+                <a asp-action="Events" class="btn-admin-sm btn-admin-edit">Tümü</a>
+            </div>
+            <div class="admin-card-body">
+                @if (((List<KurumsalEgitimSitesi.Models.Event>)ViewBag.UpcomingEvents).Any())
+                {
+                    <table class="admin-table">
+                        <thead>
+                            <tr>
+                                <th>Etkinlik</th>
+                                <th>Tarih</th>
+                                <th>Lokasyon</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var e in (List<KurumsalEgitimSitesi.Models.Event>)ViewBag.UpcomingEvents)
+                            {
+                                <tr>
+                                    <td><strong>@e.Title</strong></td>
+                                    <td>@e.StartDate.ToString("dd MMM yyyy")</td>
+                                    <td>@e.Location</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                }
+                else
+                {
+                    <div class="empty-state">
+                        <i class="fas fa-calendar-times"></i>
+                        <p>Yaklaşan etkinlik bulunmuyor.</p>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+
+    <!-- Recent Announcements -->
+    <div class="col-lg-6">
+        <div class="admin-card">
+            <div class="admin-card-header">
+                <h5><i class="fas fa-bullhorn me-2 text-primary"></i>Son Duyurular</h5>
+                <a asp-action="Announcements" class="btn-admin-sm btn-admin-edit">Tümü</a>
+            </div>
+            <div class="admin-card-body">
+                @if (((List<KurumsalEgitimSitesi.Models.Announcement>)ViewBag.RecentAnnouncements).Any())
+                {
+                    <table class="admin-table">
+                        <thead>
+                            <tr>
+                                <th>Başlık</th>
+                                <th>Tür</th>
+                                <th>Tarih</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var a in (List<KurumsalEgitimSitesi.Models.Announcement>)ViewBag.RecentAnnouncements)
+                            {
+                                <tr>
+                                    <td><strong>@a.Title</strong></td>
+                                    <td><span class="badge-type">@a.Type</span></td>
+                                    <td>@a.PublishDate?.ToString("dd MMM yyyy")</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                }
+                else
+                {
+                    <div class="empty-state">
+                        <i class="fas fa-newspaper"></i>
+                        <p>Henüz duyuru bulunmuyor.</p>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>

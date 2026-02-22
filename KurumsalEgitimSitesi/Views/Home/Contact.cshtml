@@ -1,0 +1,252 @@
+@{
+    ViewData["Title"] = "İletişim";
+}
+
+<!-- Page Header -->
+<section class="page-header">
+    <div class="container">
+        <h1 class="page-header-title" data-aos="fade-up">İletişim</h1>
+        <div class="breadcrumb-custom" data-aos="fade-up" data-aos-delay="100">
+            <a asp-controller="Home" asp-action="Index">Ana Sayfa</a>
+            <span>/</span>
+            <span>İletişim</span>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Info Cards -->
+<section class="section">
+    <div class="container">
+        <div class="row g-4 mb-5">
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                <div class="contact-info-card">
+                    <div class="contact-info-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h4 class="contact-info-title">Adresimiz</h4>
+                    <p class="contact-info-text">
+                        Atatürk Bulvarı No:123<br>
+                        Çankaya, Ankara 06000
+                    </p>
+                </div>
+            </div>
+            
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                <div class="contact-info-card">
+                    <div class="contact-info-icon">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <h4 class="contact-info-title">Telefon</h4>
+                    <p class="contact-info-text">
+                        <a href="tel:+902121234567">+90 (212) 123 45 67</a><br>
+                        <a href="tel:+905301234567">+90 (530) 123 45 67</a>
+                    </p>
+                </div>
+            </div>
+            
+            <div class="col-lg-4 col-md-6 mx-md-auto mx-lg-0" data-aos="fade-up" data-aos-delay="300">
+                <div class="contact-info-card">
+                    <div class="contact-info-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h4 class="contact-info-title">E-posta</h4>
+                    <p class="contact-info-text">
+                        <a href="mailto:info@kurumsalegitim.com">info@kurumsalegitim.com</a><br>
+                        <a href="mailto:destek@kurumsalegitim.com">destek@kurumsalegitim.com</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row g-5">
+            <!-- Contact Form -->
+            <div class="col-lg-7" data-aos="fade-right">
+                <div class="contact-form-wrapper">
+                    <h3 class="mb-4" style="color: #2563eb; font-size: 1.25rem;">
+                        <i class="fas fa-paper-plane me-2"></i>Bize Mesaj Gönderin
+                    </h3>
+                    
+                    <form asp-action="Contact" asp-controller="Home" method="post" id="contactForm">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label class="form-label form-label-custom">Adınız Soyadınız *</label>
+                                <input type="text" name="Name" class="form-control form-control-custom" 
+                                       placeholder="Adınız Soyadınız" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label form-label-custom">E-posta Adresiniz *</label>
+                                <input type="email" name="Email" class="form-control form-control-custom" 
+                                       placeholder="ornek@@email.com" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label form-label-custom">Telefon</label>
+                                <input type="tel" name="Phone" class="form-control form-control-custom" 
+                                       placeholder="+90 (5XX) XXX XX XX">
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label form-label-custom">Kurum Adı</label>
+                                <input type="text" name="Company" class="form-control form-control-custom" 
+                                       placeholder="Kurum/Şirket Adı">
+                            </div>
+                            <div class="col-12">
+                                <label class="form-label form-label-custom">Konu *</label>
+                                <select name="Subject" class="form-control form-control-custom" required>
+                                    <option value="">Konu Seçiniz</option>
+                                    <option value="Eğitim Talebi">Eğitim Talebi</option>
+                                    <option value="Teklif İsteği">Teklif İsteği</option>
+                                    <option value="Genel Bilgi">Genel Bilgi</option>
+                                    <option value="İş Birliği">İş Birliği</option>
+                                    <option value="Diğer">Diğer</option>
+                                </select>
+                            </div>
+                            <div class="col-12">
+                                <label class="form-label form-label-custom">Mesajınız *</label>
+                                <textarea name="Message" class="form-control form-control-custom" rows="5" 
+                                          placeholder="Mesajınızı buraya yazınız..." required></textarea>
+                            </div>
+                            <div class="col-12">
+                                <button type="submit" class="btn btn-submit">
+                                    <i class="fas fa-paper-plane me-2"></i>Mesaj Gönder
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                    
+                    @if (TempData["Success"] != null)
+                    {
+                        <div class="alert alert-success mt-4" role="alert">
+                            <i class="fas fa-check-circle me-2"></i>@TempData["Success"]
+                        </div>
+                    }
+                    
+                    @if (TempData["Error"] != null)
+                    {
+                        <div class="alert alert-danger mt-4" role="alert">
+                            <i class="fas fa-exclamation-circle me-2"></i>@TempData["Error"]
+                        </div>
+                    }
+                </div>
+            </div>
+            
+            <!-- Map & Working Hours -->
+            <div class="col-lg-5" data-aos="fade-left">
+                <div class="map-wrapper mb-4">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3011.6504901421867!2d29.02856!3d40.9906!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cab8678d8c0001%3A0x123456789abcdef!2sKad%C4%B1k%C3%B6y%2C%20%C4%B0stanbul!5e0!3m2!1str!2str!4v1704380000000!5m2!1str!2str" 
+                            allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+                
+                <!-- Working Hours -->
+                <div class="contact-form-wrapper">
+                    <h4 class="mb-3" style="color: #2563eb; font-size: 1.1rem;">
+                        <i class="fas fa-clock me-2"></i>Çalışma Saatleri
+                    </h4>
+                    <ul class="list-unstyled mb-0">
+                        <li class="d-flex justify-content-between py-2 border-bottom" style="font-size: 0.9rem;">
+                            <span><i class="fas fa-calendar-day me-2" style="color: #f97316;"></i>Pazartesi - Cuma</span>
+                            <strong>09:00 - 18:00</strong>
+                        </li>
+                        <li class="d-flex justify-content-between py-2 border-bottom" style="font-size: 0.9rem;">
+                            <span><i class="fas fa-calendar-day me-2" style="color: #f97316;"></i>Cumartesi</span>
+                            <strong>10:00 - 14:00</strong>
+                        </li>
+                        <li class="d-flex justify-content-between py-2" style="font-size: 0.9rem;">
+                            <span><i class="fas fa-calendar-day me-2" style="color: #f97316;"></i>Pazar</span>
+                            <strong>Kapalı</strong>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ Section -->
+<section class="section" style="background: linear-gradient(135deg, #0C58C9 0%, #0f1b2e 100%); color: white;">
+    <div class="container">
+        <div class="section-header" data-aos="fade-up">
+            <span class="section-badge">SSS</span>
+            <h2 class="section-title" style="color: white;">Sıkça Sorulan Sorular</h2>
+        </div>
+        
+        <div class="row justify-content-center">
+            <div class="col-lg-8" data-aos="fade-up" data-aos-delay="100">
+                <div class="accordion" id="faqAccordion">
+                    <div class="accordion-item border-0 mb-3 rounded-3 overflow-hidden">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" 
+                                    data-bs-target="#faq1" aria-expanded="true">
+                                Eğitimler hangi lokasyonlarda düzenleniyor?
+                            </button>
+                        </h2>
+                        <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                Eğitimlerimizi kurumunuzun belirlediği mekanda, kendi eğitim salonlarımızda 
+                                veya online olarak düzenleyebiliyoruz. Türkiye genelinde tüm illerde 
+                                hizmet vermekteyiz.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item border-0 mb-3 rounded-3 overflow-hidden">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" 
+                                    data-bs-target="#faq2" aria-expanded="false">
+                                Eğitim programları ne kadar sürüyor?
+                            </button>
+                        </h2>
+                        <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                Eğitim süreleri konuya ve kurumun ihtiyaçlarına göre 1 günden 5 güne kadar 
+                                değişebilmektedir. Uzun vadeli programlar için modüler yapıda eğitimler 
+                                de tasarlayabiliyoruz.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item border-0 mb-3 rounded-3 overflow-hidden">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" 
+                                    data-bs-target="#faq3" aria-expanded="false">
+                                Katılım sertifikası veriliyor mu?
+                            </button>
+                        </h2>
+                        <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                Evet, tüm eğitimlerimiz sonunda katılımcılara onaylı katılım sertifikası 
+                                verilmektedir. Sertifikalar kurumunuzun talep ettiği formatta düzenlenebilir.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item border-0 rounded-3 overflow-hidden">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" 
+                                    data-bs-target="#faq4" aria-expanded="false">
+                                Fiyat teklifi nasıl alabilirim?
+                            </button>
+                        </h2>
+                        <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                İletişim formumuzu doldurarak veya telefon/e-posta ile bize ulaşarak 
+                                ücretsiz keşif görüşmesi ve fiyat teklifi alabilirsiniz. Kurumunuzun 
+                                ihtiyaçlarına özel teklif hazırlıyoruz.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+@section Scripts {
+    <script>
+        // Form validation feedback
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            const btn = this.querySelector('button[type="submit"]');
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>Gönderiliyor...';
+            btn.disabled = true;
+        });
+    </script>
+}

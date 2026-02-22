@@ -1,0 +1,76 @@
+@model KurumsalEgitimSitesi.Models.Event
+@{
+    ViewData["Title"] = "Etkinlik Düzenle";
+    Layout = "~/Views/Admin/_AdminLayout.cshtml";
+}
+
+<div class="admin-page-header">
+    <h1><i class="fas fa-edit"></i> Etkinlik Düzenle</h1>
+</div>
+
+<div class="admin-card">
+    <div class="admin-card-body">
+        <form asp-action="EventEdit" asp-route-id="@Model.Id" method="post" class="admin-form">
+            @Html.AntiForgeryToken()
+            <input type="hidden" asp-for="Id" />
+            <input type="hidden" asp-for="CreatedAt" />
+            <div class="row g-3">
+                <div class="col-md-8">
+                    <label asp-for="Title" class="form-label"></label>
+                    <input asp-for="Title" class="form-control" />
+                    <span asp-validation-for="Title" class="text-danger small"></span>
+                </div>
+                <div class="col-md-4">
+                    <label asp-for="EventType" class="form-label"></label>
+                    <select asp-for="EventType" class="form-select">
+                        <option value="Seminer">Seminer</option>
+                        <option value="Eğitim">Eğitim</option>
+                        <option value="Konferans">Konferans</option>
+                        <option value="Workshop">Workshop</option>
+                    </select>
+                </div>
+                <div class="col-md-12">
+                    <label asp-for="Description" class="form-label"></label>
+                    <textarea asp-for="Description" class="form-control" rows="4"></textarea>
+                </div>
+                <div class="col-md-4">
+                    <label asp-for="StartDate" class="form-label"></label>
+                    <input asp-for="StartDate" class="form-control" type="date" />
+                    <span asp-validation-for="StartDate" class="text-danger small"></span>
+                </div>
+                <div class="col-md-4">
+                    <label asp-for="EndDate" class="form-label"></label>
+                    <input asp-for="EndDate" class="form-control" type="date" />
+                </div>
+                <div class="col-md-4">
+                    <label asp-for="Location" class="form-label"></label>
+                    <input asp-for="Location" class="form-control" />
+                </div>
+                <div class="col-md-12">
+                    <label asp-for="ImageUrl" class="form-label"></label>
+                    <input asp-for="ImageUrl" class="form-control" />
+                </div>
+                <div class="col-md-4">
+                    <label asp-for="Capacity" class="form-label"></label>
+                    <input asp-for="Capacity" class="form-control" type="number" />
+                </div>
+                <div class="col-md-4 d-flex align-items-end">
+                    <div class="form-check form-switch">
+                        <input asp-for="IsLimitedCapacity" class="form-check-input" type="checkbox" />
+                        <label asp-for="IsLimitedCapacity" class="form-check-label">Sınırlı Kontenjan</label>
+                    </div>
+                </div>
+                <div class="col-md-4 d-flex align-items-end">
+                    <div class="form-check form-switch">
+                        <input asp-for="IsActive" class="form-check-input" type="checkbox" />
+                        <label asp-for="IsActive" class="form-check-label">Aktif</label>
+                    </div>
+                </div>
+            </div>
+            <div class="form-actions">
+                <button type="submit" class="btn-admin-primary"><i class="fas fa-save"></i> Güncelle</button>
+                <a asp-action="Events" class="btn-admin-back"><i class="fas fa-arrow-left"></i> Geri Dön</a>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,134 @@
+@model List<KurumsalEgitimSitesi.Models.Reference>
+@{
+    ViewData["Title"] = "Referanslarımız";
+}
+
+<!-- Page Header -->
+<section class="page-header">
+    <div class="container">
+        <h1 class="page-header-title" data-aos="fade-up">Referanslarımız</h1>
+        <div class="breadcrumb-custom" data-aos="fade-up" data-aos-delay="100">
+            <a asp-controller="Home" asp-action="Index">Ana Sayfa</a>
+            <span>/</span>
+            <span>Referanslarımız</span>
+        </div>
+    </div>
+</section>
+
+<!-- Stats -->
+<section class="py-5" style="background: white;">
+    <div class="container">
+        <div class="row g-4 text-center" data-aos="fade-up">
+            <div class="col-md-3 col-6">
+                <div style="font-size: 2.5rem; font-weight: 700; color: #2563eb;">@Model.Count+</div>
+                <div class="text-muted fw-500">Referans Kurum</div>
+            </div>
+            <div class="col-md-3 col-6">
+                <div style="font-size: 2.5rem; font-weight: 700; color: #059669;">500+</div>
+                <div class="text-muted fw-500">Tamamlanan Eğitim</div>
+            </div>
+            <div class="col-md-3 col-6">
+                <div style="font-size: 2.5rem; font-weight: 700; color: #f97316;">15.000+</div>
+                <div class="text-muted fw-500">Eğitim Alan Kişi</div>
+            </div>
+            <div class="col-md-3 col-6">
+                <div style="font-size: 2.5rem; font-weight: 700; color: #7c3aed;">15+</div>
+                <div class="text-muted fw-500">Yıllık Deneyim</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Filter by Sector -->
+<section class="py-5">
+    <div class="container">
+        <div class="d-flex flex-wrap gap-2 mb-4 justify-content-center" data-aos="fade-up">
+            <button class="btn btn-filter active" onclick="filterRefs('all', this)">Tümü</button>
+            <button class="btn btn-filter" onclick="filterRefs('Kamu', this)">Kamu</button>
+            <button class="btn btn-filter" onclick="filterRefs('Özel Sektör', this)">Özel Sektör</button>
+            <button class="btn btn-filter" onclick="filterRefs('Belediye', this)">Belediye</button>
+        </div>
+
+        @if (Model.Any())
+        {
+            <div class="row g-4">
+                @foreach (var item in Model)
+                {
+                    <div class="col-lg-3 col-md-4 col-sm-6 ref-card" data-sector="@item.Sector" data-aos="fade-up">
+                        <div class="card border-0 shadow-sm h-100 text-center" style="border-radius: 12px; transition: all 0.3s; cursor: default;">
+                            <div class="card-body p-4">
+                                <div style="width: 70px; height: 70px; border-radius: 16px; background: @(item.Sector == "Kamu" ? "#eff6ff" : item.Sector == "Belediye" ? "#fef3c7" : "#fce7f3"); display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;">
+                                    <i class="@item.IconClass fa-2x" style="color: @(item.Sector == "Kamu" ? "#2563eb" : item.Sector == "Belediye" ? "#d97706" : "#e11d48");"></i>
+                                </div>
+                                <h6 class="fw-bold mb-2">@item.CompanyName</h6>
+                                @if (!string.IsNullOrEmpty(item.Sector))
+                                {
+                                    <span class="badge mb-2" style="background: @(item.Sector == "Kamu" ? "#eff6ff; color: #2563eb" : item.Sector == "Belediye" ? "#fef3c7; color: #d97706" : "#fce7f3; color: #e11d48"); font-size: 0.7rem;">@item.Sector</span>
+                                }
+                                @if (!string.IsNullOrEmpty(item.Description))
+                                {
+                                    <p class="text-muted small mb-0 mt-2">@item.Description</p>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        }
+        else
+        {
+            <div class="text-center py-5">
+                <i class="fas fa-building fa-3x text-muted mb-3"></i>
+                <h4 class="text-muted">Henüz referans bulunmuyor.</h4>
+            </div>
+        }
+    </div>
+</section>
+
+<!-- CTA -->
+<section style="background: linear-gradient(135deg, #0f172a, #1e3a5f); padding: 4rem 0; margin-bottom: 4rem; border-radius: 16px;">
+    <div class="container text-center text-white">
+        <h3 class="fw-bold mb-3" style="color: #ffffff;" data-aos="fade-up">Siz de Referanslarımız Arasına Katılın</h3>
+        <p class="opacity-75 mb-4" data-aos="fade-up" data-aos-delay="100">Kurumunuza özel eğitim çözümleri için hemen iletişime geçin.</p>
+        <a asp-controller="Home" asp-action="Contact" class="btn btn-lg px-5 py-3" style="background: linear-gradient(135deg, #f97316, #ea580c); color: white; border-radius: 8px; font-weight: 600;" data-aos="fade-up" data-aos-delay="200">
+            <i class="fas fa-handshake me-2"></i> İletişime Geç
+        </a>
+    </div>
+</section>
+
+@section Scripts {
+<style>
+    .btn-filter {
+        background: #f1f5f9;
+        color: #475569;
+        border: 1px solid #e2e8f0;
+        border-radius: 20px;
+        padding: 0.4rem 1.25rem;
+        font-size: 0.875rem;
+        font-weight: 500;
+        transition: all 0.3s;
+    }
+    .btn-filter:hover, .btn-filter.active {
+        background: linear-gradient(135deg, #2563eb, #3b82f6);
+        color: white;
+        border-color: #2563eb;
+    }
+    .ref-card .card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 30px rgba(0,0,0,0.12) !important;
+    }
+</style>
+<script>
+    function filterRefs(sector, btn) {
+        document.querySelectorAll('.btn-filter').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        document.querySelectorAll('.ref-card').forEach(card => {
+            if (sector === 'all' || card.dataset.sector === sector) {
+                card.style.display = '';
+            } else {
+                card.style.display = 'none';
+            }
+        });
+    }
+</script>
+}

@@ -1,0 +1,85 @@
+@model List<KurumsalEgitimSitesi.Models.Training>
+@{
+    ViewData["Title"] = "Eğitimler";
+    Layout = "~/Views/Admin/_AdminLayout.cshtml";
+}
+
+<div class="admin-page-header">
+    <h1><i class="fas fa-book-open"></i> Eğitimler</h1>
+    <a asp-action="TrainingCreate" class="btn-admin-primary">
+        <i class="fas fa-plus"></i> Yeni Eğitim
+    </a>
+</div>
+
+<div class="admin-card">
+    <div class="admin-card-body" style="padding: 0;">
+        @if (Model.Any())
+        {
+            <div style="overflow-x: auto;">
+                <table class="admin-table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Eğitim Başlığı</th>
+                            <th>Kategori</th>
+                            <th>Süre</th>
+                            <th>Seviye</th>
+                            <th>Popüler</th>
+                            <th>Durum</th>
+                            <th>İşlemler</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@item.Id</td>
+                                <td><strong>@item.Title</strong></td>
+                                <td><span class="badge-type">@item.Category?.Name</span></td>
+                                <td>@item.Duration</td>
+                                <td>@item.Level</td>
+                                <td>
+                                    @if (item.IsFeatured)
+                                    {
+                                        <i class="fas fa-star text-warning"></i>
+                                    }
+                                </td>
+                                <td>
+                                    @if (item.IsActive)
+                                    {
+                                        <span class="badge-active">Aktif</span>
+                                    }
+                                    else
+                                    {
+                                        <span class="badge-inactive">Pasif</span>
+                                    }
+                                </td>
+                                <td>
+                                    <div class="d-flex gap-1">
+                                        <a asp-action="TrainingEdit" asp-route-id="@item.Id" class="btn-admin-sm btn-admin-edit">
+                                            <i class="fas fa-edit"></i>
+                                        </a>
+                                        <form asp-action="TrainingDelete" asp-route-id="@item.Id" method="post"
+                                              onsubmit="return confirm('Bu eğitimi silmek istediğinize emin misiniz?');">
+                                            @Html.AntiForgeryToken()
+                                            <button type="submit" class="btn-admin-sm btn-admin-delete">
+                                                <i class="fas fa-trash-alt"></i>
+                                            </button>
+                                        </form>
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        }
+        else
+        {
+            <div class="empty-state">
+                <i class="fas fa-book-open"></i>
+                <p>Henüz eğitim eklenmemiş.</p>
+            </div>
+        }
+    </div>
+</div>

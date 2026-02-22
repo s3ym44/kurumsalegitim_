@@ -1,0 +1,55 @@
+@model List<KurumsalEgitimSitesi.Models.Subscriber>
+@{
+    ViewData["Title"] = "Aboneler";
+    Layout = "~/Views/Admin/_AdminLayout.cshtml";
+}
+
+<div class="admin-page-header">
+    <h1><i class="fas fa-users"></i> Bülten Aboneleri</h1>
+    <span class="badge-type" style="font-size: 0.9rem; padding: 0.5rem 1rem;">
+        <i class="fas fa-user-check me-1"></i> Aktif: @Model.Count(s => s.IsActive) / Toplam: @Model.Count
+    </span>
+</div>
+
+<div class="admin-card">
+    <div class="admin-card-body" style="padding: 0;">
+        @if (Model.Any())
+        {
+            <table class="admin-table">
+                <thead>
+                    <tr><th>#</th><th>E-posta</th><th>Ad Soyad</th><th>Abone Tarihi</th><th>Durum</th><th>İşlemler</th></tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.Id</td>
+                            <td><strong>@item.Email</strong></td>
+                            <td>@(item.FullName ?? "-")</td>
+                            <td>@item.SubscribedAt.ToString("dd MMM yyyy HH:mm")</td>
+                            <td>@(item.IsActive ? Html.Raw("<span class='badge-active'>Aktif</span>") : Html.Raw("<span class='badge-inactive'>Pasif</span>"))</td>
+                            <td>
+                                <div class="d-flex gap-1">
+                                    <form asp-action="SubscriberToggle" asp-route-id="@item.Id" method="post">
+                                        @Html.AntiForgeryToken()
+                                        <button type="submit" class="btn-admin-sm btn-admin-edit" title="@(item.IsActive ? "Pasifleştir" : "Aktifleştir")">
+                                            <i class="fas @(item.IsActive ? "fa-toggle-on" : "fa-toggle-off")"></i>
+                                        </button>
+                                    </form>
+                                    <form asp-action="SubscriberDelete" asp-route-id="@item.Id" method="post" onsubmit="return confirm('Bu aboneyi silmek istediğinize emin misiniz?');">
+                                        @Html.AntiForgeryToken()
+                                        <button type="submit" class="btn-admin-sm btn-admin-delete"><i class="fas fa-trash-alt"></i></button>
+                                    </form>
+                                </div>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        }
+        else
+        {
+            <div class="empty-state"><i class="fas fa-users"></i><p>Henüz abone bulunmuyor.</p></div>
+        }
+    </div>
+</div>

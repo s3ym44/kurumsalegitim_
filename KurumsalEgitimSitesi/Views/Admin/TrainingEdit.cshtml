@@ -1,0 +1,90 @@
+@model KurumsalEgitimSitesi.Models.Training
+@{
+    ViewData["Title"] = "Eğitim Düzenle";
+    Layout = "~/Views/Admin/_AdminLayout.cshtml";
+}
+
+<div class="admin-page-header">
+    <h1><i class="fas fa-edit"></i> Eğitim Düzenle</h1>
+</div>
+
+<div class="admin-card">
+    <div class="admin-card-body">
+        <form asp-action="TrainingEdit" asp-route-id="@Model.Id" method="post" class="admin-form">
+            @Html.AntiForgeryToken()
+            <input type="hidden" asp-for="Id" />
+            <input type="hidden" asp-for="CreatedAt" />
+            <div class="row g-3">
+                <div class="col-md-8">
+                    <label asp-for="Title" class="form-label"></label>
+                    <input asp-for="Title" class="form-control" />
+                    <span asp-validation-for="Title" class="text-danger small"></span>
+                </div>
+                <div class="col-md-4">
+                    <label asp-for="CategoryId" class="form-label"></label>
+                    <select asp-for="CategoryId" asp-items="@ViewBag.Categories" class="form-select">
+                        <option value="">Kategori Seçin</option>
+                    </select>
+                </div>
+                <div class="col-md-12">
+                    <label asp-for="ShortDescription" class="form-label"></label>
+                    <input asp-for="ShortDescription" class="form-control" />
+                </div>
+                <div class="col-md-12">
+                    <label asp-for="Description" class="form-label"></label>
+                    <textarea asp-for="Description" class="form-control" rows="4"></textarea>
+                </div>
+                <div class="col-md-4">
+                    <label asp-for="Duration" class="form-label"></label>
+                    <input asp-for="Duration" class="form-control" />
+                </div>
+                <div class="col-md-4">
+                    <label asp-for="Level" class="form-label"></label>
+                    <select asp-for="Level" class="form-select">
+                        <option value="">Seviye Seçin</option>
+                        <option value="Temel">Temel</option>
+                        <option value="Orta">Orta</option>
+                        <option value="İleri">İleri</option>
+                        <option value="Karma">Karma</option>
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    <label asp-for="Location" class="form-label"></label>
+                    <input asp-for="Location" class="form-control" />
+                </div>
+                <div class="col-md-4">
+                    <label asp-for="TargetAudience" class="form-label"></label>
+                    <input asp-for="TargetAudience" class="form-control" />
+                </div>
+                <div class="col-md-4">
+                    <label asp-for="CertificateType" class="form-label"></label>
+                    <input asp-for="CertificateType" class="form-control" />
+                </div>
+                <div class="col-md-4">
+                    <label asp-for="SortOrder" class="form-label"></label>
+                    <input asp-for="SortOrder" class="form-control" type="number" />
+                </div>
+                <div class="col-md-12">
+                    <label asp-for="ImageUrl" class="form-label"></label>
+                    <input asp-for="ImageUrl" class="form-control" />
+                </div>
+                <div class="col-md-6">
+                    <div class="form-check form-switch">
+                        <input asp-for="IsFeatured" class="form-check-input" type="checkbox" />
+                        <label asp-for="IsFeatured" class="form-check-label">Popüler / Öne Çıkan</label>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-check form-switch">
+                        <input asp-for="IsActive" class="form-check-input" type="checkbox" />
+                        <label asp-for="IsActive" class="form-check-label">Aktif</label>
+                    </div>
+                </div>
+            </div>
+            <div class="form-actions">
+                <button type="submit" class="btn-admin-primary"><i class="fas fa-save"></i> Güncelle</button>
+                <a asp-action="Trainings" class="btn-admin-back"><i class="fas fa-arrow-left"></i> Geri Dön</a>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,597 @@
+@{
+    ViewData["Title"] = "Eğitim Kataloğu";
+}
+
+<!-- Page Header -->
+<section class="page-header">
+    <div class="container">
+        <h1 class="page-header-title" data-aos="fade-up">Eğitim Kataloğu</h1>
+        <div class="breadcrumb-custom" data-aos="fade-up" data-aos-delay="100">
+            <a asp-controller="Home" asp-action="Index">Ana Sayfa</a>
+            <span>/</span>
+            <span>Eğitim Kataloğu</span>
+        </div>
+    </div>
+</section>
+
+<!-- Training Catalog Section -->
+<section class="section training-catalog-section">
+    <div class="container">
+        <div class="section-header" data-aos="fade-up">
+            <span class="section-badge">Tüm Eğitimler</span>
+            <h2 class="section-title">Eğitim Programlarımız</h2>
+            <p class="section-subtitle">
+                Kurumunuzun ihtiyaçlarına uygun eğitim programlarımızı inceleyin.
+            </p>
+        </div>
+        
+        <!-- Kişisel Gelişim Category -->
+        <div class="training-category mb-5" id="kisisel-gelisim" data-aos="fade-up">
+            <div class="training-category-header" style="background: linear-gradient(135deg, #b45309 0%, #d97706 100%);">
+                <div class="category-icon">
+                    <i class="fas fa-user-graduate"></i>
+                </div>
+                <h3>Kişisel Gelişim Eğitimleri</h3>
+                <p>Çalışanlarınızın kişisel ve profesyonel gelişimini destekleyen, yetkinliklerini artıran eğitim programları.</p>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="training-card">
+                        <div class="training-card-header" style="background: linear-gradient(135deg, #b45309 0%, #d97706 100%);">
+                            <span class="training-category-badge">Kişisel Gelişim</span>
+                            <h4>Liderlik ve Yöneticilik</h4>
+                        </div>
+                        <div class="training-card-body">
+                            <div class="training-info-item">
+                                <i class="fas fa-clock"></i>
+                                <span><strong>Süre:</strong> 2 Gün (16 Saat)</span>
+                            </div>
+                            <div class="training-info-item">
+                                <i class="fas fa-users"></i>
+                                <span><strong>Hedef Kitle:</strong> Orta ve Üst Düzey Yöneticiler</span>
+                            </div>
+                            <div class="training-info-item">
+                                <i class="fas fa-certificate"></i>
+                                <span><strong>Sertifika:</strong> Katılım Sertifikası</span>
+                            </div>
+                            <p class="training-description">
+                                Etkili liderlik becerileri, ekip yönetimi, motivasyon teknikleri ve stratejik düşünme konularını kapsayan kapsamlı eğitim programı.
+                            </p>
+                        </div>
+                        <div class="training-card-footer">
+                            <a asp-controller="Home" asp-action="Contact" class="btn-hero-secondary">
+                                <i class="fas fa-info-circle"></i> Bilgi Al
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6">
+                    <div class="training-card">
+                        <div class="training-card-header" style="background: linear-gradient(135deg, #b45309 0%, #d97706 100%);">
+                            <span class="training-category-badge">Kişisel Gelişim</span>
+                            <h4>Etkili İletişim Becerileri</h4>
+                        </div>
+                        <div class="training-card-body">
+                            <div class="training-info-item">
+                                <i class="fas fa-clock"></i>
+                                <span><strong>Süre:</strong> 1 Gün (8 Saat)</span>
+                            </div>
+                            <div class="training-info-item">
+                                <i class="fas fa-users"></i>
+                                <span><strong>Hedef Kitle:</strong> Tüm Çalışanlar</span>
+                            </div>
+                            <div class="training-info-item">
+                                <i class="fas fa-certificate"></i>
+                                <span><strong>Sertifika:</strong> Katılım Sertifikası</span>
+                            </div>
+                            <p class="training-description">
+                                Sözlü ve yazılı iletişim, aktif dinleme, empati, beden dili ve profesyonel iletişim teknikleri eğitimi.
+                            </p>
+                        </div>
+                        <div class="training-card-footer">
+                            <a asp-controller="Home" asp-action="Contact" class="btn-hero-secondary">
+                                <i class="fas fa-info-circle"></i> Bilgi Al
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6">
+                    <div class="training-card">
+                        <div class="training-card-header" style="background: linear-gradient(135deg, #b45309 0%, #d97706 100%);">
+                            <span class="training-category-badge">Kişisel Gelişim</span>
+                            <h4>Zaman ve Stres Yönetimi</h4>
+                        </div>
+                        <div class="training-card-body">
+                            <div class="training-info-item">
+                                <i class="fas fa-clock"></i>
+                                <span><strong>Süre:</strong> 1 Gün (8 Saat)</span>
+                            </div>
+                            <div class="training-info-item">
+                                <i class="fas fa-users"></i>
+                                <span><strong>Hedef Kitle:</strong> Tüm Çalışanlar</span>
+                            </div>
+                            <div class="training-info-item">
+                                <i class="fas fa-certificate"></i>
+                                <span><strong>Sertifika:</strong> Katılım Sertifikası</span>
+                            </div>
+                            <p class="training-description">
+                                Önceliklendirme, planlama teknikleri, stres kaynaklarını tanıma ve başa çıkma stratejileri.
+                            </p>
+                        </div>
+                        <div class="training-card-footer">
+                            <a asp-controller="Home" asp-action="Contact" class="btn-hero-secondary">
+                                <i class="fas fa-info-circle"></i> Bilgi Al
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Teknoloji Eğitimleri Category -->
+        <div class="training-category mb-5" id="teknoloji" data-aos="fade-up">
+            <div class="training-category-header" style="background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);">
+                <div class="category-icon">
+                    <i class="fas fa-laptop-code"></i>
+                </div>
+                <h3>Teknoloji Eğitimleri</h3>
+                <p>Dijital dönüşüm süreçlerinizi destekleyen, güncel teknoloji konularında kapsamlı eğitimler.</p>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="training-card">
+                        <div class="training-card-header" style="background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);">
+                            <span class="training-category-badge">Teknoloji</span>
+                            <h4>Dijital Dönüşüm Farkındalık</h4>
+                        </div>
+                        <div class="training-card-body">
+                            <div class="training-info-item">
+                                <i class="fas fa-clock"></i>
+                                <span><strong>Süre:</strong> 1 Gün (8 Saat)</span>
+                            </div>
+                            <div class="training-info-item">
+                                <i class="fas fa-users"></i>
+                                <span><strong>Hedef Kitle:</strong> Tüm Çalışanlar</span>
+                            </div>
+                            <div class="training-info-item">
+                                <i class="fas fa-certificate"></i>
+                                <span><strong>Sertifika:</strong> Katılım Sertifikası</span>
+                            </div>
+                            <p class="training-description">
+                                Dijital çağda iş süreçleri, teknoloji trendleri ve kurumlarda dijital dönüşüm stratejileri.
+                            </p>
+                        </div>
+                        <div class="training-card-footer">
+                            <a asp-controller="Home" asp-action="Contact" class="btn-hero-secondary">
+                                <i class="fas fa-info-circle"></i> Bilgi Al
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6">
+                    <div class="training-card">
+                        <div class="training-card-header" style="background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);">
+                            <span class="training-category-badge">Teknoloji</span>
+                            <h4>Veri Analitiği Temelleri</h4>
+                        </div>
+                        <div class="training-card-body">
+                            <div class="training-info-item">
+                                <i class="fas fa-clock"></i>
+                                <span><strong>Süre:</strong> 2 Gün (16 Saat)</span>
+                            </div>
+                            <div class="training-info-item">
+                                <i class="fas fa-users"></i>
+                                <span><strong>Hedef Kitle:</strong> Veri ile Çalışan Personel</span>
+                            </div>
+                            <div class="training-info-item">
+                                <i class="fas fa-certificate"></i>
+                                <span><strong>Sertifika:</strong> Katılım Sertifikası</span>
+                            </div>
+                            <p class="training-description">
+                                Veri toplama, analiz yöntemleri, raporlama teknikleri ve veri odaklı karar verme süreçleri.
+                            </p>
+                        </div>
+                        <div class="training-card-footer">
+                            <a asp-controller="Home" asp-action="Contact" class="btn-hero-secondary">
+                                <i class="fas fa-info-circle"></i> Bilgi Al
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Siber Güvenlik Category -->
+        <div class="training-category mb-5" id="siber-guvenlik" data-aos="fade-up">
+            <div class="training-category-header" style="background: linear-gradient(135deg, #dc2626 0%, #ef4444 100%);">
+                <div class="category-icon">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <h3>Siber Güvenlik Eğitimleri</h3>
+                <p>Kurumunuzun bilgi güvenliğini sağlamak için kritik önem taşıyan siber güvenlik eğitimleri.</p>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="training-card">
+                        <div class="training-card-header" style="background: linear-gradient(135deg, #dc2626 0%, #ef4444 100%);">
+                            <span class="training-category-badge">Siber Güvenlik</span>
+                            <h4>Siber Güvenlik Farkındalık</h4>
+                        </div>
+                        <div class="training-card-body">
+                            <div class="training-info-item">
+                                <i class="fas fa-clock"></i>
+                                <span><strong>Süre:</strong> 1 Gün (8 Saat)</span>
+                            </div>
+                            <div class="training-info-item">
+                                <i class="fas fa-users"></i>
+                                <span><strong>Hedef Kitle:</strong> Tüm Çalışanlar</span>
+                            </div>
+                            <div class="training-info-item">
+                                <i class="fas fa-certificate"></i>
+                                <span><strong>Sertifika:</strong> Katılım Sertifikası</span>
+                            </div>
+                            <p class="training-description">
+                                Sosyal mühendislik saldırıları, phishing, güvenli parola kullanımı ve temel güvenlik önlemleri.
+                            </p>
+                        </div>
+                        <div class="training-card-footer">
+                            <a asp-controller="Home" asp-action="Contact" class="btn-hero-secondary">
+                                <i class="fas fa-info-circle"></i> Bilgi Al
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6">
+                    <div class="training-card">
+                        <div class="training-card-header" style="background: linear-gradient(135deg, #dc2626 0%, #ef4444 100%);">
+                            <span class="training-category-badge">Siber Güvenlik</span>
+                            <h4>Kurumsal Bilgi Güvenliği</h4>
+                        </div>
+                        <div class="training-card-body">
+                            <div class="training-info-item">
+                                <i class="fas fa-clock"></i>
+                                <span><strong>Süre:</strong> 2 Gün (16 Saat)</span>
+                            </div>
+                            <div class="training-info-item">
+                                <i class="fas fa-users"></i>
+                                <span><strong>Hedef Kitle:</strong> IT ve Güvenlik Personeli</span>
+                            </div>
+                            <div class="training-info-item">
+                                <i class="fas fa-certificate"></i>
+                                <span><strong>Sertifika:</strong> Katılım Sertifikası</span>
+                            </div>
+                            <p class="training-description">
+                                ISO 27001, güvenlik politikaları, risk yönetimi ve olay müdahale süreçleri.
+                            </p>
+                        </div>
+                        <div class="training-card-footer">
+                            <a asp-controller="Home" asp-action="Contact" class="btn-hero-secondary">
+                                <i class="fas fa-info-circle"></i> Bilgi Al
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- MS Office Category -->
+        <div class="training-category mb-5" id="ms-office" data-aos="fade-up">
+            <div class="training-category-header" style="background: linear-gradient(135deg, #059669 0%, #10b981 100%);">
+                <div class="category-icon">
+                    <i class="fab fa-microsoft"></i>
+                </div>
+                <h3>MS Office Eğitimleri</h3>
+                <p>İş verimliliğinizi artıracak Microsoft Office uygulamaları eğitimleri.</p>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="training-card">
+                        <div class="training-card-header" style="background: linear-gradient(135deg, #059669 0%, #10b981 100%);">
+                            <span class="training-category-badge">MS Office</span>
+                            <h4>Excel İleri Seviye</h4>
+                        </div>
+                        <div class="training-card-body">
+                            <div class="training-info-item">
+                                <i class="fas fa-clock"></i>
+                                <span><strong>Süre:</strong> 2 Gün (16 Saat)</span>
+                            </div>
+                            <div class="training-info-item">
+                                <i class="fas fa-users"></i>
+                                <span><strong>Hedef Kitle:</strong> Veri ile Çalışan Personel</span>
+                            </div>
+                            <div class="training-info-item">
+                                <i class="fas fa-certificate"></i>
+                                <span><strong>Sertifika:</strong> Katılım Sertifikası</span>
+                            </div>
+                            <p class="training-description">
+                                Pivot tablolar, makrolar, ileri formüller, veri analizi ve dashboard oluşturma teknikleri.
+                            </p>
+                        </div>
+                        <div class="training-card-footer">
+                            <a asp-controller="Home" asp-action="Contact" class="btn-hero-secondary">
+                                <i class="fas fa-info-circle"></i> Bilgi Al
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6">
+                    <div class="training-card">
+                        <div class="training-card-header" style="background: linear-gradient(135deg, #059669 0%, #10b981 100%);">
+                            <span class="training-category-badge">MS Office</span>
+                            <h4>PowerPoint Profesyonel</h4>
+                        </div>
+                        <div class="training-card-body">
+                            <div class="training-info-item">
+                                <i class="fas fa-clock"></i>
+                                <span><strong>Süre:</strong> 1 Gün (8 Saat)</span>
+                            </div>
+                            <div class="training-info-item">
+                                <i class="fas fa-users"></i>
+                                <span><strong>Hedef Kitle:</strong> Sunum Yapan Personel</span>
+                            </div>
+                            <div class="training-info-item">
+                                <i class="fas fa-certificate"></i>
+                                <span><strong>Sertifika:</strong> Katılım Sertifikası</span>
+                            </div>
+                            <p class="training-description">
+                                Profesyonel sunum tasarımı, animasyon teknikleri ve etkili sunum becerileri.
+                            </p>
+                        </div>
+                        <div class="training-card-footer">
+                            <a asp-controller="Home" asp-action="Contact" class="btn-hero-secondary">
+                                <i class="fas fa-info-circle"></i> Bilgi Al
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Protokol ve Teşrifat Category -->
+        <div class="training-category mb-5" id="protokol" data-aos="fade-up">
+            <div class="training-category-header" style="background: linear-gradient(135deg, #7c3aed 0%, #8b5cf6 100%);">
+                <div class="category-icon">
+                    <i class="fas fa-handshake"></i>
+                </div>
+                <h3>Protokol ve Teşrifat Eğitimleri</h3>
+                <p>Resmi protokol kuralları ve kurumsal temsil becerilerini geliştiren eğitimler.</p>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="training-card">
+                        <div class="training-card-header" style="background: linear-gradient(135deg, #7c3aed 0%, #8b5cf6 100%);">
+                            <span class="training-category-badge">Protokol</span>
+                            <h4>Resmi Protokol Kuralları</h4>
+                        </div>
+                        <div class="training-card-body">
+                            <div class="training-info-item">
+                                <i class="fas fa-clock"></i>
+                                <span><strong>Süre:</strong> 2 Gün (16 Saat)</span>
+                            </div>
+                            <div class="training-info-item">
+                                <i class="fas fa-users"></i>
+                                <span><strong>Hedef Kitle:</strong> Kamu Personeli, Protokol Görevlileri</span>
+                            </div>
+                            <div class="training-info-item">
+                                <i class="fas fa-certificate"></i>
+                                <span><strong>Sertifika:</strong> Katılım Sertifikası</span>
+                            </div>
+                            <p class="training-description">
+                                Devlet protokolü, masa düzeni, tören yönetimi, diplomatik nezaket kuralları.
+                            </p>
+                        </div>
+                        <div class="training-card-footer">
+                            <a asp-controller="Home" asp-action="Contact" class="btn-hero-secondary">
+                                <i class="fas fa-info-circle"></i> Bilgi Al
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6">
+                    <div class="training-card">
+                        <div class="training-card-header" style="background: linear-gradient(135deg, #7c3aed 0%, #8b5cf6 100%);">
+                            <span class="training-category-badge">Protokol</span>
+                            <h4>Kurumsal Temsil ve Davranış</h4>
+                        </div>
+                        <div class="training-card-body">
+                            <div class="training-info-item">
+                                <i class="fas fa-clock"></i>
+                                <span><strong>Süre:</strong> 1 Gün (8 Saat)</span>
+                            </div>
+                            <div class="training-info-item">
+                                <i class="fas fa-users"></i>
+                                <span><strong>Hedef Kitle:</strong> Tüm Çalışanlar</span>
+                            </div>
+                            <div class="training-info-item">
+                                <i class="fas fa-certificate"></i>
+                                <span><strong>Sertifika:</strong> Katılım Sertifikası</span>
+                            </div>
+                            <p class="training-description">
+                                Profesyonel görünüm, davranış standartları, kurumsal imaj yönetimi.
+                            </p>
+                        </div>
+                        <div class="training-card-footer">
+                            <a asp-controller="Home" asp-action="Contact" class="btn-hero-secondary">
+                                <i class="fas fa-info-circle"></i> Bilgi Al
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Kamu Kurumları Eğitimleri Category -->
+        <div class="training-category mb-5" id="kamu" data-aos="fade-up">
+            <div class="training-category-header" style="background: linear-gradient(135deg, #0891b2 0%, #06b6d4 100%);">
+                <div class="category-icon">
+                    <i class="fas fa-landmark"></i>
+                </div>
+                <h3>Kamu Kurumları Eğitimleri</h3>
+                <p>Kamu personeline özel tasarlanmış hizmet içi eğitim programları.</p>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="training-card">
+                        <div class="training-card-header" style="background: linear-gradient(135deg, #0891b2 0%, #06b6d4 100%);">
+                            <span class="training-category-badge">Kamu</span>
+                            <h4>Hizmet İçi Eğitim Programı</h4>
+                        </div>
+                        <div class="training-card-body">
+                            <div class="training-info-item">
+                                <i class="fas fa-clock"></i>
+                                <span><strong>Süre:</strong> Kuruma Özel</span>
+                            </div>
+                            <div class="training-info-item">
+                                <i class="fas fa-users"></i>
+                                <span><strong>Hedef Kitle:</strong> Kamu Personeli</span>
+                            </div>
+                            <div class="training-info-item">
+                                <i class="fas fa-certificate"></i>
+                                <span><strong>Sertifika:</strong> Hizmet İçi Eğitim Sertifikası</span>
+                            </div>
+                            <p class="training-description">
+                                Kamu kurumlarının ihtiyaçlarına özel tasarlanmış kapsamlı hizmet içi eğitimler.
+                            </p>
+                        </div>
+                        <div class="training-card-footer">
+                            <a asp-controller="Home" asp-action="Contact" class="btn-hero-secondary">
+                                <i class="fas fa-info-circle"></i> Bilgi Al
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6">
+                    <div class="training-card">
+                        <div class="training-card-header" style="background: linear-gradient(135deg, #0891b2 0%, #06b6d4 100%);">
+                            <span class="training-category-badge">Kamu</span>
+                            <h4>Mevzuat ve Yönetmelik Eğitimi</h4>
+                        </div>
+                        <div class="training-card-body">
+                            <div class="training-info-item">
+                                <i class="fas fa-clock"></i>
+                                <span><strong>Süre:</strong> 1-2 Gün</span>
+                            </div>
+                            <div class="training-info-item">
+                                <i class="fas fa-users"></i>
+                                <span><strong>Hedef Kitle:</strong> Kamu Personeli</span>
+                            </div>
+                            <div class="training-info-item">
+                                <i class="fas fa-certificate"></i>
+                                <span><strong>Sertifika:</strong> Katılım Sertifikası</span>
+                            </div>
+                            <p class="training-description">
+                                Güncel mevzuat değişiklikleri, yönetmelik uygulamaları ve yasal düzenlemeler.
+                            </p>
+                        </div>
+                        <div class="training-card-footer">
+                            <a asp-controller="Home" asp-action="Contact" class="btn-hero-secondary">
+                                <i class="fas fa-info-circle"></i> Bilgi Al
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- KVKK Category -->
+        <div class="training-category mb-5" id="kvkk" data-aos="fade-up">
+            <div class="training-category-header" style="background: linear-gradient(135deg, #ea580c 0%, #f97316 100%);">
+                <div class="category-icon">
+                    <i class="fas fa-user-lock"></i>
+                </div>
+                <h3>KVKK Eğitimleri</h3>
+                <p>Kişisel Verilerin Korunması Kanunu kapsamında zorunlu farkındalık ve uyum eğitimleri.</p>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="training-card">
+                        <div class="training-card-header" style="background: linear-gradient(135deg, #ea580c 0%, #f97316 100%);">
+                            <span class="training-category-badge">KVKK</span>
+                            <h4>KVKK Farkındalık Eğitimi</h4>
+                        </div>
+                        <div class="training-card-body">
+                            <div class="training-info-item">
+                                <i class="fas fa-clock"></i>
+                                <span><strong>Süre:</strong> 1 Gün (8 Saat)</span>
+                            </div>
+                            <div class="training-info-item">
+                                <i class="fas fa-users"></i>
+                                <span><strong>Hedef Kitle:</strong> Tüm Çalışanlar</span>
+                            </div>
+                            <div class="training-info-item">
+                                <i class="fas fa-certificate"></i>
+                                <span><strong>Sertifika:</strong> KVKK Eğitim Sertifikası</span>
+                            </div>
+                            <p class="training-description">
+                                KVKK kapsamı, temel kavramlar, veri sorumlusu yükümlülükleri ve çalışan sorumlulukları.
+                            </p>
+                        </div>
+                        <div class="training-card-footer">
+                            <a asp-controller="Home" asp-action="Contact" class="btn-hero-secondary">
+                                <i class="fas fa-info-circle"></i> Bilgi Al
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6">
+                    <div class="training-card">
+                        <div class="training-card-header" style="background: linear-gradient(135deg, #ea580c 0%, #f97316 100%);">
+                            <span class="training-category-badge">KVKK</span>
+                            <h4>KVKK Uyum Süreci</h4>
+                        </div>
+                        <div class="training-card-body">
+                            <div class="training-info-item">
+                                <i class="fas fa-clock"></i>
+                                <span><strong>Süre:</strong> 2 Gün (16 Saat)</span>
+                            </div>
+                            <div class="training-info-item">
+                                <i class="fas fa-users"></i>
+                                <span><strong>Hedef Kitle:</strong> KVKK Sorumluları, IT Personeli</span>
+                            </div>
+                            <div class="training-info-item">
+                                <i class="fas fa-certificate"></i>
+                                <span><strong>Sertifika:</strong> KVKK Uzman Sertifikası</span>
+                            </div>
+                            <p class="training-description">
+                                VERBİS kaydı, politika hazırlama, veri envanteri, teknik ve idari tedbirler.
+                            </p>
+                        </div>
+                        <div class="training-card-footer">
+                            <a asp-controller="Home" asp-action="Contact" class="btn-hero-secondary">
+                                <i class="fas fa-info-circle"></i> Bilgi Al
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="section section-blue" style="margin-bottom: 4rem;">
+    <div class="container text-center" data-aos="fade-up">
+        <h2 class="section-title mb-3" style="color: white;">Kurumunuza Özel Eğitim Programı Hazırlayalım</h2>
+        <p class="section-subtitle mb-4" style="color: rgba(255,255,255,0.9);">
+            İhtiyaçlarınızı dinleyerek, size özel eğitim içeriği ve takvim oluşturalım.
+        </p>
+        <a asp-controller="Home" asp-action="Contact" class="btn-hero-primary">
+            <i class="fas fa-phone-alt"></i> Hemen İletişime Geçin
+        </a>
+    </div>
+</section>

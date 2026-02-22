@@ -1,0 +1,206 @@
+@model KurumsalEgitimSitesi.Models.Training
+@{
+    ViewData["Title"] = Model.Title;
+}
+
+<!-- Page Header -->
+<section class="page-header">
+    <div class="container">
+        <h1 class="page-header-title" data-aos="fade-up">@Model.Title</h1>
+        <div class="breadcrumb-custom" data-aos="fade-up" data-aos-delay="100">
+            <a asp-controller="Home" asp-action="Index">Ana Sayfa</a>
+            <span>/</span>
+            <a asp-controller="Home" asp-action="TrainingCatalog">Eğitim Kataloğu</a>
+            <span>/</span>
+            <span>@Model.Title</span>
+        </div>
+    </div>
+</section>
+
+<!-- Content -->
+<section class="py-5">
+    <div class="container">
+        <div class="row g-4">
+            <!-- Main Content -->
+            <div class="col-lg-8">
+                @if (!string.IsNullOrEmpty(Model.ImageUrl))
+                {
+                    <img src="@Model.ImageUrl" alt="@Model.Title" class="img-fluid rounded-3 mb-4 w-100" style="max-height: 400px; object-fit: cover;" data-aos="fade-up" />
+                }
+
+                <div class="card border-0 shadow-sm mb-4" style="border-radius: 12px;" data-aos="fade-up">
+                    <div class="card-body p-4">
+                        <h4 class="fw-bold mb-3"><i class="fas fa-info-circle text-primary me-2"></i>Eğitim Hakkında</h4>
+                        @if (!string.IsNullOrEmpty(Model.Description))
+                        {
+                            <div style="font-size: 1rem; line-height: 1.9; color: #374151;">
+                                @Html.Raw(Model.Description.Replace("\n", "<br/>"))
+                            </div>
+                        }
+                        else
+                        {
+                            <p class="text-muted">@Model.ShortDescription</p>
+                        }
+                    </div>
+                </div>
+
+                <!-- Info Grid -->
+                <div class="row g-3 mb-4" data-aos="fade-up">
+                    @if (!string.IsNullOrEmpty(Model.Duration))
+                    {
+                        <div class="col-md-6">
+                            <div class="card border-0 h-100" style="border-radius: 12px; background: #eff6ff;">
+                                <div class="card-body p-3 d-flex align-items-center gap-3">
+                                    <div style="width: 48px; height: 48px; background: #2563eb; border-radius: 12px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                        <i class="fas fa-clock text-white"></i>
+                                    </div>
+                                    <div>
+                                        <small class="text-muted d-block">Süre</small>
+                                        <strong>@Model.Duration</strong>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                    @if (!string.IsNullOrEmpty(Model.Level))
+                    {
+                        <div class="col-md-6">
+                            <div class="card border-0 h-100" style="border-radius: 12px; background: #f0fdf4;">
+                                <div class="card-body p-3 d-flex align-items-center gap-3">
+                                    <div style="width: 48px; height: 48px; background: #059669; border-radius: 12px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                        <i class="fas fa-signal text-white"></i>
+                                    </div>
+                                    <div>
+                                        <small class="text-muted d-block">Seviye</small>
+                                        <strong>@Model.Level</strong>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                    @if (!string.IsNullOrEmpty(Model.TargetAudience))
+                    {
+                        <div class="col-md-6">
+                            <div class="card border-0 h-100" style="border-radius: 12px; background: #fef3c7;">
+                                <div class="card-body p-3 d-flex align-items-center gap-3">
+                                    <div style="width: 48px; height: 48px; background: #d97706; border-radius: 12px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                        <i class="fas fa-users text-white"></i>
+                                    </div>
+                                    <div>
+                                        <small class="text-muted d-block">Hedef Kitle</small>
+                                        <strong>@Model.TargetAudience</strong>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                    @if (!string.IsNullOrEmpty(Model.CertificateType))
+                    {
+                        <div class="col-md-6">
+                            <div class="card border-0 h-100" style="border-radius: 12px; background: #fce7f3;">
+                                <div class="card-body p-3 d-flex align-items-center gap-3">
+                                    <div style="width: 48px; height: 48px; background: #e11d48; border-radius: 12px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                        <i class="fas fa-certificate text-white"></i>
+                                    </div>
+                                    <div>
+                                        <small class="text-muted d-block">Sertifika</small>
+                                        <strong>@Model.CertificateType</strong>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+
+            <!-- Sidebar -->
+            <div class="col-lg-4">
+                <!-- CTA Card -->
+                <div class="card border-0 shadow-sm mb-4" style="border-radius: 12px; overflow: hidden; position: sticky; top: 100px;" data-aos="fade-left">
+                    <div style="background: linear-gradient(135deg, #2563eb, #06b6d4); padding: 1.5rem; color: white; text-align: center;">
+                        <i class="fas fa-graduation-cap fa-2x mb-2"></i>
+                        <h5 class="fw-bold mb-1">Bu Eğitime Katılın</h5>
+                        <small class="opacity-75">Kurumunuza özel teklif alın</small>
+                    </div>
+                    <div class="card-body p-4">
+                        <ul class="list-unstyled mb-4">
+                            @if (!string.IsNullOrEmpty(Model.Duration))
+                            {
+                                <li class="d-flex align-items-center mb-2">
+                                    <i class="fas fa-check-circle text-success me-2"></i>
+                                    <span>@Model.Duration eğitim</span>
+                                </li>
+                            }
+                            @if (!string.IsNullOrEmpty(Model.CertificateType))
+                            {
+                                <li class="d-flex align-items-center mb-2">
+                                    <i class="fas fa-check-circle text-success me-2"></i>
+                                    <span>@Model.CertificateType</span>
+                                </li>
+                            }
+                            <li class="d-flex align-items-center mb-2">
+                                <i class="fas fa-check-circle text-success me-2"></i>
+                                <span>Uzman eğitmenler</span>
+                            </li>
+                            <li class="d-flex align-items-center mb-2">
+                                <i class="fas fa-check-circle text-success me-2"></i>
+                                <span>Eğitim materyalleri dahil</span>
+                            </li>
+                        </ul>
+                        <a asp-controller="Home" asp-action="Contact" class="btn w-100 py-2" style="background: linear-gradient(135deg, #f97316, #ea580c); color: white; border-radius: 8px; font-weight: 600;">
+                            <i class="fas fa-paper-plane me-1"></i> Teklif Al
+                        </a>
+                        <a href="tel:+902121234567" class="btn w-100 py-2 mt-2" style="background: #f1f5f9; color: #334155; border-radius: 8px; font-weight: 500;">
+                            <i class="fas fa-phone me-1"></i> Hemen Ara
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Category Info -->
+                @if (Model.Category != null)
+                {
+                    <div class="card border-0 shadow-sm" style="border-radius: 12px;" data-aos="fade-left" data-aos-delay="100">
+                        <div class="card-body p-4">
+                            <h6 class="fw-bold mb-3"><i class="@Model.Category.IconClass me-2" style="color: @Model.Category.ColorCode;"></i>@Model.Category.Name</h6>
+                            <p class="text-muted small mb-3">@Model.Category.Description</p>
+                            <a asp-controller="Home" asp-action="TrainingCatalog" class="text-decoration-none small fw-bold" style="color: #2563eb;">
+                                Tüm @Model.Category.Name Eğitimleri <i class="fas fa-arrow-right ms-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+
+        <!-- Related Trainings -->
+        @{
+            var related = ViewBag.RelatedTrainings as List<KurumsalEgitimSitesi.Models.Training>;
+        }
+        @if (related != null && related.Any())
+        {
+            <div class="mt-5 pt-5" style="border-top: 1px solid #e5e7eb;">
+                <h3 class="fw-bold text-center mb-4" data-aos="fade-up">Benzer Eğitimler</h3>
+                <div class="row g-4 justify-content-center">
+                    @foreach (var t in related)
+                    {
+                        <div class="col-lg-4 col-md-6" data-aos="fade-up">
+                            <div class="card border-0 shadow-sm h-100" style="border-radius: 12px; overflow: hidden; transition: all 0.3s;">
+                                <div style="height: 8px; background: linear-gradient(135deg, #2563eb, #06b6d4);"></div>
+                                <div class="card-body p-4">
+                                    <h6 class="fw-bold mb-2">@t.Title</h6>
+                                    <p class="text-muted small mb-3">@t.ShortDescription</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <small class="text-muted"><i class="fas fa-clock me-1"></i>@t.Duration</small>
+                                        <a asp-controller="Home" asp-action="TrainingDetail" asp-route-id="@t.Id" class="text-decoration-none small fw-bold" style="color: #2563eb;">
+                                            Detay <i class="fas fa-arrow-right ms-1"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        }
+    </div>
+</section>

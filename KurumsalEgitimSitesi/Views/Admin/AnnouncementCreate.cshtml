@@ -1,0 +1,63 @@
+@model KurumsalEgitimSitesi.Models.Announcement
+@{
+    ViewData["Title"] = "Yeni Duyuru";
+    Layout = "~/Views/Admin/_AdminLayout.cshtml";
+}
+
+<div class="admin-page-header">
+    <h1><i class="fas fa-plus-circle"></i> Yeni Duyuru</h1>
+</div>
+
+<div class="admin-card">
+    <div class="admin-card-body">
+        <form asp-action="AnnouncementCreate" method="post" class="admin-form">
+            @Html.AntiForgeryToken()
+            <div class="row g-3">
+                <div class="col-md-8">
+                    <label asp-for="Title" class="form-label"></label>
+                    <input asp-for="Title" class="form-control" placeholder="Duyuru başlığı" />
+                    <span asp-validation-for="Title" class="text-danger small"></span>
+                </div>
+                <div class="col-md-4">
+                    <label asp-for="Type" class="form-label"></label>
+                    <select asp-for="Type" class="form-select">
+                        <option value="Duyuru">Duyuru</option>
+                        <option value="Blog">Blog</option>
+                        <option value="Haber">Haber</option>
+                    </select>
+                </div>
+                <div class="col-md-12">
+                    <label asp-for="Summary" class="form-label"></label>
+                    <input asp-for="Summary" class="form-control" placeholder="Kısa özet" />
+                </div>
+                <div class="col-md-12">
+                    <label asp-for="Content" class="form-label"></label>
+                    <textarea asp-for="Content" class="form-control" rows="6" placeholder="Duyuru içeriği"></textarea>
+                    <span asp-validation-for="Content" class="text-danger small"></span>
+                </div>
+                <div class="col-md-4">
+                    <label asp-for="Author" class="form-label"></label>
+                    <input asp-for="Author" class="form-control" placeholder="Yazar adı" />
+                </div>
+                <div class="col-md-4">
+                    <label asp-for="PublishDate" class="form-label"></label>
+                    <input asp-for="PublishDate" class="form-control" type="date" />
+                </div>
+                <div class="col-md-4 d-flex align-items-end">
+                    <div class="form-check form-switch">
+                        <input asp-for="IsPublished" class="form-check-input" type="checkbox" />
+                        <label asp-for="IsPublished" class="form-check-label">Yayınla</label>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <label asp-for="ImageUrl" class="form-label"></label>
+                    <input asp-for="ImageUrl" class="form-control" placeholder="https://..." />
+                </div>
+            </div>
+            <div class="form-actions">
+                <button type="submit" class="btn-admin-primary"><i class="fas fa-save"></i> Kaydet</button>
+                <a asp-action="Announcements" class="btn-admin-back"><i class="fas fa-arrow-left"></i> Geri Dön</a>
+            </div>
+        </form>
+    </div>
+</div>

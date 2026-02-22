@@ -1,0 +1,80 @@
+@{
+    ViewData["Title"] = "Toplu Mail Gönderimi";
+    Layout = "~/Views/Admin/_AdminLayout.cshtml";
+}
+
+<div class="admin-page-header">
+    <h1><i class="fas fa-paper-plane"></i> Toplu Mail Gönderimi</h1>
+</div>
+
+<div class="row g-4">
+    <div class="col-lg-4">
+        <div class="stat-card">
+            <div class="stat-card-icon cyan"><i class="fas fa-users"></i></div>
+            <div class="stat-card-info">
+                <h3>@ViewBag.SubscriberCount</h3>
+                <p>Aktif Abone</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="admin-card mt-4">
+    <div class="admin-card-header">
+        <h5><i class="fas fa-envelope me-2 text-primary"></i>Mail Gönder</h5>
+    </div>
+    <div class="admin-card-body">
+        <form asp-action="SendBulkMail" method="post" class="admin-form" onsubmit="return confirm('Tüm aktif abonelere mail göndermek istediğinize emin misiniz?');">
+            @Html.AntiForgeryToken()
+
+            <div class="row g-3">
+                <div class="col-md-12">
+                    <label class="form-label fw-bold">Şablon Seçin</label>
+                    <select name="templateId" class="form-select" id="templateSelect">
+                        <option value="0">-- Şablon kullanmadan gönder --</option>
+                        @foreach (var t in (List<KurumsalEgitimSitesi.Models.MailTemplate>)ViewBag.Templates)
+                        {
+                            <option value="@t.Id" data-subject="@t.Subject" data-body="@System.Net.WebUtility.HtmlEncode(t.HtmlBody)">@t.Name</option>
+                        }
+                    </select>
+                    <small class="text-muted">Şablon seçerseniz konu ve içerik otomatik doldurulur. İsterseniz üzerine yazabilirsiniz.</small>
+                </div>
+
+                <div class="col-md-12">
+                    <label class="form-label fw-bold">E-posta Konusu</label>
+                    <input type="text" name="customSubject" id="customSubject" class="form-control" placeholder="E-posta konusu" />
+                </div>
+
+                <div class="col-md-12">
+                    <label class="form-label fw-bold">E-posta İçeriği (HTML)</label>
+                    <textarea name="customBody" id="customBody" class="form-control" rows="10" placeholder="HTML içerik..."></textarea>
+                    <small class="text-muted">Kullanılabilir değişkenler: <code>{{name}}</code>, <code>{{email}}</code></small>
+                </div>
+            </div>
+
+            <div class="form-actions">
+                <button type="submit" class="btn-admin-primary">
+                    <i class="fas fa-paper-plane"></i> @ViewBag.SubscriberCount Aboneye Gönder
+                </button>
+                <a asp-action="Subscribers" class="btn-admin-back"><i class="fas fa-users"></i> Aboneleri Gör</a>
+                <a asp-action="MailTemplates" class="btn-admin-back"><i class="fas fa-envelope-open-text"></i> Şablonlar</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+<script>
+    document.getElementById('templateSelect').addEventListener('change', function () {
+        var selected = this.options[this.selectedIndex];
+        var subject = selected.getAttribute('data-subject') || '';
+        var body = selected.getAttribute('data-body') || '';
+        if (subject) document.getElementById('customSubject').value = subject;
+        if (body) {
+            var txt = document.createElement('textarea');
+            txt.innerHTML = body;
+            document.getElementById('customBody').value = txt.value;
+        }
+    });
+</script>
+}
