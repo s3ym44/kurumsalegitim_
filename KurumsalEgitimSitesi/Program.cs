@@ -49,7 +49,7 @@ if (!string.IsNullOrWhiteSpace(chosenUrl))
     {
         var uri = new Uri(chosenUrl);
         var userInfo = uri.UserInfo.Split(':');
-        connectionString = $"Host={uri.Host};Port={uri.Port};Database={uri.AbsolutePath.TrimStart('/')};Username={userInfo[0]};Password={userInfo[1]};SSL Mode=Require;Trust Server Certificate=true";
+        connectionString = $"Host={uri.Host};Port={uri.Port};Database={uri.AbsolutePath.TrimStart('/')};Username={userInfo[0]};Password={userInfo[1]};SSL Mode=Disable";
         Console.WriteLine($"[DB] Bağlantı: Host={uri.Host}, Port={uri.Port}, Database={uri.AbsolutePath.TrimStart('/')}");
     }
     catch (Exception ex)
@@ -65,8 +65,8 @@ else if (!string.IsNullOrEmpty(pgHost))
     var pgDb = Environment.GetEnvironmentVariable("PGDATABASE") ?? "railway";
     var pgUser = Environment.GetEnvironmentVariable("PGUSER") ?? "postgres";
     var pgPass = Environment.GetEnvironmentVariable("PGPASSWORD") ?? "";
-    connectionString = $"Host={pgHost};Port={pgPort};Database={pgDb};Username={pgUser};Password={pgPass};SSL Mode=Require;Trust Server Certificate=true";
-    Console.WriteLine($"[DB] PG vars: Host={pgHost}, Port={pgPort}, Database={pgDb}");
+    connectionString = $"Host={pgHost};Port={pgPort};Database={pgDb};Username={pgUser};Password={pgPass};SSL Mode=Disable";
+    Console.WriteLine($"[DB] PG vars: Host={pgHost}, Port={pgPort}, Database={pgDb}, User={pgUser}");
 }
 else
 {
