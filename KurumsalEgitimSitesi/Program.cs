@@ -36,9 +36,13 @@ Console.WriteLine($"[DB] DATABASE_PRIVATE_URL: {(databasePrivateUrl != null ? "S
 Console.WriteLine($"[DB] DATABASE_PUBLIC_URL: {(databasePublicUrl != null ? "SET" : "NULL")}");
 Console.WriteLine($"[DB] PGHOST: {(pgHost != null ? "SET" : "NULL")}");
 
-var chosenUrl = databaseUrl ?? databasePrivateUrl ?? databasePublicUrl;
+// Boş string'leri de null olarak ele al
+var chosenUrl = new[] { databaseUrl, databasePrivateUrl, databasePublicUrl }
+    .FirstOrDefault(u => !string.IsNullOrWhiteSpace(u));
 
-if (!string.IsNullOrEmpty(chosenUrl))
+Console.WriteLine($"[DB] chosenUrl: {(chosenUrl != null ? $"'{chosenUrl[..Math.Min(40, chosenUrl.Length)]}...'" : "NULL")}");
+
+if (!string.IsNullOrWhiteSpace(chosenUrl))
 {
     Console.WriteLine($"[DB] URL bulundu ({chosenUrl.Length} karakter), parse ediliyor...");
     try
