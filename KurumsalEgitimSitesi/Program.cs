@@ -56,7 +56,21 @@ if (!string.IsNullOrWhiteSpace(chosenUrl))
     {
         Console.WriteLine($"[DB] URL parse hatası: {ex.Message}");
         Console.WriteLine($"[DB] URL ilk 40 karakter: {chosenUrl[..Math.Min(40, chosenUrl.Length)]}");
-        connectionString = builder.Configuration.GetConnectionString("DefaultConnection")!;
+        // URL bozuksa PGHOST'a düş
+        var fallbackHost = Environment.GetEnvironmentVariable("PGHOST");
+        if (!string.IsNullOrEmpty(fallbackHost))
+        {
+            var fbPort = Environment.GetEnvironmentVariable("PGPORT") ?? "5432";
+            var fbDb = Environment.GetEnvironmentVariable("PGDATABASE") ?? "railway";
+            var fbUser = Environment.GetEnvironmentVariable("PGUSER") ?? "postgres";
+            var fbPass = Environment.GetEnvironmentVariable("PGPASSWORD") ?? "";
+            connectionString = $"Host={fallbackHost};Port={fbPort};Database={fbDb};Username={fbUser};Password={fbPass};SSL Mode=Disable";
+            Console.WriteLine($"[DB] URL bozuk, PG vars fallback: Host={fallbackHost}, Port={fbPort}, Database={fbDb}");
+        }
+        else
+        {
+            connectionString = builder.Configuration.GetConnectionString("DefaultConnection")!;
+        }
     }
 }
 else if (!string.IsNullOrEmpty(pgHost))
