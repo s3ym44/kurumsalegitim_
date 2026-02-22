@@ -1830,21 +1830,84 @@ img {
 /* ===================================
    Responsive Design
    =================================== */
+
+/* --- Tablet (max-width: 991.98px) --- */
 @media (max-width: 991.98px) {
+    /* Layout */
+    main {
+        padding: 0 2rem;
+    }
+
+    .footer {
+        margin: 0 2rem;
+    }
+
+    /* Navbar */
+    .navbar-custom {
+        left: 1rem;
+        right: 1rem;
+        top: 1rem;
+        padding: 0.75rem 1rem;
+    }
+
+    .navbar-custom.scrolled {
+        padding: 0.5rem 1rem;
+    }
+
+    /* Navbar collapse menu */
+    .navbar-collapse {
+        background: rgba(10, 22, 40, 0.98);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border-radius: var(--radius-md);
+        padding: 1rem;
+        margin-top: 0.75rem;
+    }
+
+    .navbar-nav .nav-item {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .navbar-nav .nav-item:last-child {
+        border-bottom: none;
+    }
+
+    .nav-link-custom {
+        padding: 0.75rem 0.5rem !important;
+    }
+
+    .btn-nav-cta {
+        margin-top: 0.5rem;
+        width: 100%;
+        text-align: center;
+    }
+
+    /* Hero */
     .hero-title {
-        font-size: 2.5rem;
+        font-size: 2.25rem;
     }
 
     .hero-subtitle {
-        font-size: 1rem;
+        font-size: 0.95rem;
     }
 
+    .hero-section {
+        margin-top: 40px;
+        border-radius: var(--radius-lg);
+    }
+
+    /* Sections */
     .section-title {
         font-size: 1.75rem;
     }
 
     .page-header-title {
         font-size: 2rem;
+    }
+
+    .page-header {
+        margin-top: 40px;
+        border-radius: var(--radius-lg);
     }
 
     .stat-number {
@@ -1854,60 +1917,293 @@ img {
     .kontenjan-badge {
         display: none;
     }
+
+    /* Corporate section */
+    .corporate-section {
+        border-radius: var(--radius-lg);
+    }
+
+    .section-blue {
+        border-radius: var(--radius-lg);
+    }
+
+    .seminar-section {
+        border-radius: var(--radius-lg);
+    }
 }
 
+/* --- Mobile (max-width: 767.98px) --- */
 @media (max-width: 767.98px) {
+    /* Layout */
+    main {
+        padding: 0 0.75rem;
+    }
+
+    .footer {
+        margin: 0 0.75rem;
+    }
+
+    /* Navbar */
+    .navbar-custom {
+        left: 0.5rem;
+        right: 0.5rem;
+        top: 0.5rem;
+        padding: 0.6rem 0.75rem;
+    }
+
+    .navbar-custom.scrolled {
+        padding: 0.4rem 0.75rem;
+    }
+
+    .logo-text-primary {
+        font-size: 0.95rem;
+    }
+
+    .logo-text-secondary {
+        font-size: 0.6rem;
+    }
+
+    /* Hero */
     .hero-section {
         min-height: 70vh;
-        padding-top: 100px;
+        padding-top: 80px;
+        margin-top: 20px;
+        border-radius: var(--radius-md);
     }
 
     .hero-parallax {
-        min-height: 70vh;
+        min-height: 60vh;
+    }
+
+    .hero-content {
+        padding: 1.5rem 1rem;
     }
 
     .hero-title {
-        font-size: 2rem;
+        font-size: 1.75rem;
     }
 
     .hero-subtitle {
-        font-size: 0.9rem;
+        font-size: 0.85rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .hero-badge {
+        font-size: 0.75rem;
+        margin-bottom: 0.75rem;
     }
 
     .hero-buttons {
         flex-direction: column;
-        align-items: flex-start;
+        align-items: stretch;
     }
 
     .btn-hero-primary,
     .btn-hero-secondary {
         width: 100%;
-        max-width: 280px;
         justify-content: center;
+        padding: 0.75rem 1.5rem;
+        font-size: 0.85rem;
     }
 
+    /* Sections */
     .section {
-        padding: 3rem 0;
+        padding: 2.5rem 0;
+    }
+
+    .section-header {
+        margin-bottom: 2rem;
     }
 
     .section-title {
-        font-size: 1.5rem;
+        font-size: 1.35rem;
     }
 
+    .section-subtitle {
+        font-size: 0.875rem;
+    }
+
+    .section-badge {
+        font-size: 0.7rem;
+        padding: 0.3rem 1rem;
+    }
+
+    .section-blue {
+        border-radius: var(--radius-md);
+        padding: 2.5rem 0;
+    }
+
+    /* Page Header */
     .page-header {
-        padding: 6rem 0 3rem;
+        padding: 5rem 1rem 2.5rem;
+        margin-top: 10px;
+        border-radius: var(--radius-md);
     }
 
     .page-header-title {
-        font-size: 1.75rem;
+        font-size: 1.5rem;
     }
 
-    .contact-form-wrapper {
+    .page-header-subtitle {
+        font-size: 0.875rem;
+    }
+
+    .breadcrumb-custom {
+        font-size: 0.75rem;
+    }
+
+    /* Service Cards */
+    .service-card {
         padding: 1.5rem;
     }
 
+    .service-card h3 {
+        font-size: 1.1rem;
+    }
+
+    .service-card p {
+        font-size: 0.85rem;
+    }
+
+    /* Training Cards */
+    .training-card-img {
+        height: 160px;
+    }
+
+    .training-tabs {
+        gap: 0.4rem;
+        overflow-x: auto;
+        flex-wrap: nowrap;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        padding-bottom: 0.75rem;
+    }
+
+    .training-tabs::-webkit-scrollbar {
+        display: none;
+    }
+
+    .training-tab {
+        padding: 0.4rem 1rem;
+        font-size: 0.8rem;
+        white-space: nowrap;
+        flex-shrink: 0;
+    }
+
+    /* Seminar Section */
+    .seminar-section {
+        padding: 2.5rem 0;
+        border-radius: var(--radius-md);
+    }
+
+    .seminar-card {
+        padding: 1.25rem;
+    }
+
+    .seminar-card h4 {
+        font-size: 1rem;
+    }
+
+    /* Corporate Section */
+    .corporate-section {
+        padding: 2.5rem 0;
+        border-radius: var(--radius-md);
+        margin-bottom: 1.5rem;
+    }
+
+    .corporate-card {
+        padding: 1.25rem;
+    }
+
+    /* Event Cards */
+    .event-card {
+        padding: 1rem;
+        gap: 1rem;
+        flex-direction: column;
+    }
+
+    .event-date {
+        flex-direction: row;
+        gap: 0.5rem;
+        min-width: auto;
+        padding: 0.5rem 1rem;
+    }
+
+    .event-day {
+        font-size: 1.25rem;
+    }
+
+    .event-info {
+        flex-direction: column;
+        gap: 0.25rem;
+    }
+
+    /* Statistics */
+    .stat-card {
+        padding: 1.25rem 0.75rem;
+    }
+
+    .stat-number {
+        font-size: 1.75rem;
+    }
+
+    .stat-label {
+        font-size: 0.8rem;
+    }
+
+    /* Trust & Category Cards */
+    .trust-card {
+        padding: 1.5rem;
+    }
+
+    .category-card {
+        padding: 1.5rem;
+    }
+
+    .category-icon {
+        width: 56px;
+        height: 56px;
+    }
+
+    .category-icon i {
+        font-size: 1.35rem;
+    }
+
+    /* Contact */
+    .contact-form-wrapper {
+        padding: 1.25rem;
+    }
+
+    .contact-info-card {
+        padding: 1.5rem;
+    }
+
+    .map-wrapper iframe {
+        height: 250px;
+    }
+
+    /* Training Catalog */
+    .training-category-header {
+        padding: 1.5rem;
+    }
+
+    .training-category-header h3 {
+        font-size: 1.15rem;
+    }
+
+    .training-card-body {
+        padding: 1rem;
+    }
+
+    .training-card-footer {
+        padding: 0.75rem 1rem;
+    }
+
+    /* Footer */
     .footer {
         text-align: center;
+        padding: 3rem 0 1.5rem;
+        border-radius: var(--radius-lg) var(--radius-lg) 0 0;
     }
 
     .footer-contact-item {
@@ -1927,17 +2223,77 @@ img {
         margin-top: 0.75rem;
     }
 
-    .training-tabs {
-        gap: 0.5rem;
+    /* Accordion */
+    .accordion-button {
+        font-size: 0.875rem;
+        padding: 0.875rem 1rem;
     }
 
-    .training-tab {
-        padding: 0.4rem 1rem;
+    .accordion-body {
+        font-size: 0.85rem;
+    }
+
+    /* Buttons */
+    .btn-view-all {
+        padding: 0.65rem 1.5rem;
+        font-size: 0.85rem;
+    }
+
+    .btn-service {
+        padding: 0.6rem 1.25rem !important;
+        font-size: 0.8rem !important;
+    }
+}
+
+/* --- Small Mobile (max-width: 480px) --- */
+@media (max-width: 480px) {
+    main {
+        padding: 0 0.5rem;
+    }
+
+    .footer {
+        margin: 0 0.5rem;
+    }
+
+    .navbar-custom {
+        left: 0.25rem;
+        right: 0.25rem;
+    }
+
+    .hero-title {
+        font-size: 1.5rem;
+    }
+
+    .hero-subtitle {
         font-size: 0.8rem;
     }
 
-    .seminar-section {
-        padding: 3rem 0;
+    .section-title {
+        font-size: 1.2rem;
+    }
+
+    .page-header-title {
+        font-size: 1.3rem;
+    }
+
+    .page-header {
+        padding: 4.5rem 0.75rem 2rem;
+    }
+
+    .stat-number {
+        font-size: 1.5rem;
+    }
+
+    .service-card {
+        padding: 1.25rem;
+    }
+
+    .corporate-card {
+        padding: 1rem;
+    }
+
+    .footer {
+        padding: 2rem 0 1rem;
     }
 }
 

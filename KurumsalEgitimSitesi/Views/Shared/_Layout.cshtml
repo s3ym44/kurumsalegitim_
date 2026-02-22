@@ -172,9 +172,9 @@
                     }
                     else
                     {
-                        <form asp-controller="Home" asp-action="Subscribe" method="post" class="d-flex gap-2">
+                        <form asp-controller="Home" asp-action="Subscribe" method="post" class="d-flex flex-column flex-sm-row gap-2">
                             @Html.AntiForgeryToken()
-                            <input type="text" name="fullName" class="form-control" placeholder="Adınız" style="border-radius: 8px; border: 1px solid rgba(255,255,255,0.15); background: rgba(255,255,255,0.05); color: white; max-width: 160px; font-size: 0.875rem;" />
+                            <input type="text" name="fullName" class="form-control" placeholder="Adınız" style="border-radius: 8px; border: 1px solid rgba(255,255,255,0.15); background: rgba(255,255,255,0.05); color: white; font-size: 0.875rem; flex: 0 1 160px; min-width: 0;" />
                             <input type="email" name="email" class="form-control" placeholder="E-posta adresiniz" required style="border-radius: 8px; border: 1px solid rgba(255,255,255,0.15); background: rgba(255,255,255,0.05); color: white; font-size: 0.875rem;" />
                             <button type="submit" class="btn px-4" style="background: linear-gradient(135deg, #f97316, #ea580c); color: white; border-radius: 8px; white-space: nowrap; font-size: 0.875rem; font-weight: 500;">Abone Ol</button>
                         </form>

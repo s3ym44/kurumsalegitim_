@@ -475,8 +475,12 @@
         min-height: 70vh;
     }
 
+    .hero-content {
+        padding: 1.5rem 1rem;
+    }
+
     .hero-title {
-        font-size: 2rem;
+        font-size: 1.75rem;
         letter-spacing: 0;
     }
 
@@ -489,7 +493,7 @@
     }
 
     .section {
-        padding: 3rem 0;
+        padding: 2.5rem 0;
     }
 
     .stat-number {
@@ -498,17 +502,21 @@
 
     .hero-buttons {
         flex-direction: column;
-        align-items: flex-start;
+        align-items: stretch;
     }
 
     .btn-hero-primary,
     .btn-hero-secondary {
         width: 100%;
-        max-width: 280px;
         justify-content: center;
     }
 
     .seminar-section {
-        padding: 3rem 0;
+        padding: 2.5rem 0;
+    }
+
+    .training-card-body h4 {
+        min-height: auto;
+        font-size: 0.95rem;
     }
 }
