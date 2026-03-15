@@ -343,38 +343,7 @@
     color: white;
 }
 
-/* ===================================
-   CORPORATE CARDS
-   =================================== */
-.corporate-card {
-    background: white;
-    border-radius: 12px;
-    padding: 1.5rem;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.08);
-    transition: all 0.3s ease;
-    height: 100%;
-}
-
-.corporate-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
-}
-
-.corporate-card-icon {
-    width: 56px;
-    height: 56px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.5rem;
-}
-
-.corporate-card h5 {
-    font-size: 1rem;
-    font-weight: 600;
-    color: var(--gray-800);
-}
+/* Corporate cards - site.css'te tanımlı */
 
 /* ===================================
    BUTTONS — General
